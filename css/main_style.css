@@ -45,3 +45,11 @@ footer{
     color:black;
     text-decoration:none;
 }
+
+.search_key{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    width: 300px;
+}
