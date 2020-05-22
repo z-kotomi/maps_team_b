@@ -58,3 +58,27 @@ footer{
 .red{
     color:red;
 }
+.like_table{
+    border:solid 1px black;
+    border-collapse: collapse;
+}
+th,.like_table_td,.like_table_tr{
+    border:solid 1px black;
+    text-align:center;
+}
+#like_spot_map_box {
+    width: 960px;
+    height: 400px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+#creat_route{
+    background-color:#FF8A00;
+    margin:0 auto;
+    width: 260px;
+    height: 40px;
+    text-align:center;
+    padding:5px;
+    border:1px solid #FF8A00;
+    border-radius:20px;
+}

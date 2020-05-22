@@ -126,7 +126,7 @@ function get_request_method() {
 function get_post_data($key) {
    $str = '';
    if (isset($_POST[$key]) === TRUE) {
-       $str = $_POST[$key];
+       $str = trim($_POST[$key]);
    }
    return $str;
 }
@@ -333,4 +333,15 @@ function new_user_name_db_check($new_user_name){
     }else{
         return true;
     }
+}
+
+function h($str) {
+    return htmlspecialchars($str, ENT_QUOTES, HTML_CHARACTER_SET);
+}
+function redirect_to($url){
+    header('Location: '. $url);
+    exit;
+}
+function is_post(){
+    return $_SERVER['REQUEST_METHOD'] === 'POST';
 }
