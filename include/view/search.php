@@ -18,9 +18,10 @@
         </header>
         <section class="content">
             <!--ここに追加-->
+            <div class="search_image">
             <div class="search_key">
                 <p>聖地のキーワードを入力してください</p>
-                <form method="post" action="search.php">
+                <form method="post" action="search.php" class="search_keyword">
                     <input type="text" name="key_word">
                     <input type="submit" name="submit" value="送信">
                 </form>
@@ -34,6 +35,7 @@
                         </li>
                     </ol>
                     <?php } ?>
+            </div>
             </div>
 
         </section>
