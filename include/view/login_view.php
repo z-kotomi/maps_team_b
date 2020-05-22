@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>view example</title>
+        <title>ログインページ</title>
         <link rel="stylesheet" href="../css/main_style.css" type="text/css" />
     </head>
     <body>
@@ -11,14 +11,23 @@
                 <a href="">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
-                <div class="header_nemu"><a class="header_link" href="">Menu</a></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="">気になる</a></div>
-                <div class="header_nemu"><a class="header_link" href="">TOP</a></div>
             </div>
         </header>
         <section class="content">
-            <!--ここに追加-->
-            <img src="../web_image/test.png"></img>
+            <div class="login_content">
+              <form method="post" action="login_process.php">
+                <div><input type="text" name="user_name" placeholder="ユーザー名"></div>
+                <div><input type="password" name="password" placeholder="パスワード">
+                <div><input type="submit" value="ログイン">
+              </form>
+              <?php if(count($error)>0){ ?>
+              <?php foreach($error as $value){ ?>
+              <p class="red"><?php print $value;} ?></p>
+              <?php } ?>
+              <div class="account_create">
+                <a href="register.php">ユーザーの新規作成</a>
+              </div>
+            </div>
         </section>
     </body>
     <footer>
