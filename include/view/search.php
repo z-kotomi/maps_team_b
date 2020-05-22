@@ -24,12 +24,16 @@
                     <input type="text" name="key_word">
                     <input type="submit" name="submit" value="送信">
                 </form>
-                <p><?php print entity_str($result_message); ?></p>
-                <?php foreach($result_list as $result) { ?>
-                <a href="maps.php?anime_id=<?php echo entity_str($result['anime_id']); ?>">
-                <?php echo entity_str($result['anime_name']); ?>
-                </a>
-                <?php } ?>
+                    <p><?php print entity_str($result_message); ?></p>
+                    <?php foreach($result_list as $result) { ?>
+                    <ol>
+                        <li>
+                        <a href="maps.php?anime_id=<?php echo entity_str($result['anime_id']); ?>">
+                        <?php echo entity_str($result['anime_name']); ?>
+                        </a>
+                        </li>
+                    </ol>
+                    <?php } ?>
             </div>
 
         </section>
