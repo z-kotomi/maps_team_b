@@ -26,7 +26,8 @@ if(($user_name = user_id_check($user_id)) === ''){
 }
 
 $link = get_db_connect();
-$sql = "SELECT like_spot_table.like_spot_id,spot_table.spot_name,anime_table.anime_name,location_table.lat,location_table.lng
+$sql = "SELECT like_spot_table.like_spot_id,spot_table.spot_name,anime_table.anime_name,
+        location_table.lat,location_table.lng,spot_table.spot_content,spot_table.spot_image
         FROM like_spot_table 
         JOIN spot_table 
         ON spot_table.spot_id = like_spot_table.spot_id 

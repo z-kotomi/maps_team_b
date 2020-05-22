@@ -61,8 +61,10 @@ footer{
 .like_table{
     border:solid 1px black;
     border-collapse: collapse;
+    width:800px;
+    margin:0 auto;
 }
-th,.like_table_td,.like_table_tr{
+.like_table_th,.like_table_td,.like_table_tr{
     border:solid 1px black;
     text-align:center;
 }
@@ -72,7 +74,7 @@ th,.like_table_td,.like_table_tr{
     margin-top:20px;
     margin-bottom:20px;
 }
-#creat_route{
+#create_route{
     background-color:#FF8A00;
     margin:0 auto;
     width: 260px;
@@ -81,4 +83,27 @@ th,.like_table_td,.like_table_tr{
     padding:5px;
     border:1px solid #FF8A00;
     border-radius:20px;
+}
+#route_text_content{
+    display: none; 
+    width:100%;
+    margin:0 auto;
+    padding-top:20px;
+}
+.like_table_content{
+    margin-bottom:20px;
+}
+.like_page_circle{
+    border:1px solid black;
+    background-color:black;
+    width: 12px;
+    height:12px;
+    border-radius:9px;
+    margin-bottom:30px;
+}
+.like_space{
+    width:60px;
+}
+.like_sport_img{
+    width:225px;
 }
