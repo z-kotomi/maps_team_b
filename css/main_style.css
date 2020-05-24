@@ -113,3 +113,47 @@ footer{
 .like_sport_img{
     width:225px;
 }
+
+.search_key{
+    width: 300px;
+    background-color: #C1EAFD;
+    text-align:center;
+    margin:100px auto;
+    padding: 15px;
+}
+
+.search_keyword{
+  box-sizing: border-box;
+}
+.search_keyword input[type="text"]{
+  border: 1px solid #999;
+  padding: 3px 5px;
+  border-radius: 20px;
+  height: 2.0em;
+  width: 245px;
+  overflow: hidden;
+}
+.search_keyword input[type="text"]:focus {
+  outline: 0;
+}
+.search_keyword input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  outline : none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+/*.search_image{*/
+/*    width: 400px;*/
+/*    height: 300px;*/
+/*    background-image: url(../web_image/background-image.jpg);*/
+/*    margin:100px auto;*/
+/*    text-align:center;*/
+/*}*/
