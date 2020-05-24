@@ -12,16 +12,15 @@
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
                 <div class="header_nemu"><a class="header_link" href="">Menu</a></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="like.php">気になる</a></div>
+                <div class="header_nemu header_spe"><a class="header_link" href="">気になる</a></div>
                 <div class="header_nemu"><a class="header_link" href="">TOP</a></div>
             </div>
         </header>
         <section class="content">
             <!--ここに追加-->
-            <div class="search_image">
             <div class="search_key">
                 <p>聖地のキーワードを入力してください</p>
-                <form method="post" action="search.php" class="search_keyword">
+                <form method="post" action="search.php">
                     <input type="text" name="key_word">
                     <input type="submit" name="submit" value="送信">
                 </form>
@@ -35,7 +34,6 @@
                         </li>
                     </ol>
                     <?php } ?>
-            </div>
             </div>
 
         </section>
