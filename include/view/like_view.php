@@ -84,8 +84,7 @@
             </div>
         </section>
         <!--initMap is not fanction 解決策-->
-        <script src="custom-js-google-map.js"></script> 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&callback=initMap"></script>
+        <!--<script src="custom-js-google-map.js"></script> -->
         <script>
         var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         var labelIndex = 0;
@@ -94,6 +93,7 @@
         var markers = [];
         function initMap(){
             like_spot = JSON.parse('<?php echo $like_data_json; ?>');
+
             var map_box = document.getElementById('like_spot_map_box');
             var mapCenter = {
               lat: parseFloat(like_spot[0]['lat']),
@@ -113,19 +113,6 @@
             if(like_spot.length>0){
                 addMaker();
             }
-            // for(var i = 0;i<like_spot.length;i++){
-            //     var like_spot_location = { 
-            //         lat:parseFloat(like_spot[i]['lat']),
-            //         lng:parseFloat(like_spot[i]['lng'])
-            //     };
-            //     console.log(like_spot_location);
-            //     var marker = new google.maps.Marker({
-            //         map: map,
-            //         position: like_spot_location,
-            //         title: like_spot[i]["spot_name"], 
-            //         animation: google.maps.Animation.DROP,
-            //     });
-            // }
             document.getElementById('create_route').addEventListener('click',routeCreate,false);
         }
           
@@ -194,12 +181,14 @@
             setMapOnAll(null);
         }
         </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&callback=initMap"></script>
+        <footer>
+            <section class="foot_all">
+                <p style="text-align:center"><a class="foot_link" href="question.php">お問い合わせ</a></p>
+                <p class="footer_img"><img src="../web_image/team_logo.png"></img></p>
+                <p style="text-align:center;color:black;font-size:10px"><small>Copyright &copy; B-Team All Rights Reserved.</small></p>
+            </section>
+        </footer>
     </body>
-    <footer>
-        <section class="foot_all">
-            <p style="text-align:center"><a class="foot_link" href="question.php">お問い合わせ</a></p>
-            <p class="footer_img"><img src="../web_image/team_logo.png"></img></p>
-            <p style="text-align:center;color:black;font-size:10px"><small>Copyright &copy; B-Team All Rights Reserved.</small></p>
-        </section>
-    </footer>
+    
 </html>

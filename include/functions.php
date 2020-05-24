@@ -345,3 +345,10 @@ function redirect_to($url){
 function is_post(){
     return $_SERVER['REQUEST_METHOD'] === 'POST';
 }
+
+function get_post_data_new($key, $default = ''){
+    if(isset($_POST[$key]) === true){
+        return $_POST[$key];
+    }
+    return $default;
+}

@@ -74,6 +74,12 @@ footer{
     margin-top:20px;
     margin-bottom:20px;
 }
+#map_page_map_box{
+    width: 960px;
+    height: 400px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
 #create_route{
     background-color:#FF8A00;
     margin:0 auto;
