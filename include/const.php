@@ -1,5 +1,7 @@
 <?php
 
+define('TAX', 1.05);  // 消費税
+
 define('DB_HOST',   'localhost'); // データベースのホスト名又はIPアドレス
 define('DB_USER',   getenv('DB_USER'));  // MySQLのユーザ名
 define('DB_PASSWD', getenv('DB_USER'));    // MySQLのパスワード
