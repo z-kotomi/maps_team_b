@@ -3,7 +3,7 @@ require_once '../include/const.php';
 require_once '../include/functions.php';
 
 $user_name = '';
-$anime_id = 0;
+$anime_id = '';
 $anime_name = '';
 $spots = [];
 $errors = [];
@@ -42,24 +42,36 @@ if (get_request_method() === 'POST'){
                     VALUES ({$like_spot_id},{$user_id},'{$time}','{$time}')";
             $aaa = db_insert($sql);
         }else{
-            echo "<script>alert('登録下さい')</script>";
+            echo "<script>alert('登録下さい');location.href='login.php';</script>";
         }
     }
 }
+
+
 //検索されたアニメIDを取得
 if (isset($_GET['anime_id']) === TRUE) {
     $anime_id = $_GET['anime_id'];
-}elseif($anime_id === 0) {
-    $errors[] = '検索されたアニメが見つかりませんでした';
+    if($anime_id ==''){
+        $errors[] = '検索されたアニメが見つかりませんでした';
+    }else{
+        $anime_id = intval($anime_id);
+    }
+}else if(get_request_method() === 'POST'){
+    $anime_id = get_post_data('anime_id');
+    if($anime_id ==''){
+        $errors[] = '検索されたアニメが見つかりませんでした';
+    }else{
+        $anime_id = intval($anime_id);
+    }
 }
 
 //サーバー接続
 $link = get_db_connect();
 //リスト情報を取得
 $sql = "SELECT spot_table.spot_id, location_table.location_id, 
-        anime_table.anime_name, anime_table.anime_name, spot_table.spot_name, 
-        spot_table.spot_content, spot_table.spot_image, spot_table.business_name, 
-        spot_table.business_time, spot_table.price, business_content, business_image,
+        anime_table.anime_name,spot_table.spot_name, 
+        spot_table.spot_content,spot_table.spot_image, spot_table.business_name, 
+        spot_table.business_time, spot_table.price, spot_table.business_content, spot_table.business_image,
         location_table.lat,location_table.lng 
         FROM anime_table 
         JOIN spot_table 
@@ -67,6 +79,7 @@ $sql = "SELECT spot_table.spot_id, location_table.location_id,
         JOIN location_table 
         ON location_table.location_id = spot_table.location_id 
         WHERE spot_table.anime_id={$anime_id}";
+
 if ($result = query_db($link, $sql)){
     while ($row = mysqli_fetch_assoc($result)){
             $spots[] = $row;
@@ -79,6 +92,11 @@ if ($result = query_db($link, $sql)){
 //サーバー切断
 close_db_connect($link);
 
-$spots_json = json_encode($spots, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+///*****///
+$spots_json = json_encode($spots, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_UNESCAPED_UNICODE);
+//str内容変更
+$spots_json = str_replace('\n','',$spots_json); 
+//console エラー内容を具体的な横を表示
+// var_dump(mb_substr($spots_json,694,20));
 
 include_once '../include/view/map_view.php';
