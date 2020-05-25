@@ -10,6 +10,7 @@
             <div class="header_box">
                 <a href="">
                     <img class="logo" src="../web_image/logo.png"></img>
+                    <div class="header_nemu"><a class="header_link" href="search.php">TOP</a></div>
                 </a>
             </div>
         </header>
