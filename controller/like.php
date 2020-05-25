@@ -40,6 +40,7 @@ $like_data = get_as_array($link,$sql);
 //DB Close
 close_db_connect($link);
 // php array => Js 読み込むできるJSON
-$like_data_json = json_encode($like_data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+$like_data_json = json_encode($like_data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_UNESCAPED_UNICODE);
+$like_data_json = str_replace('\n','',$like_data_json); 
 
 include_once '../include/view/like_view.php';

@@ -42,6 +42,7 @@
 <?php           foreach ($spots as $spot){ ?>
                 <tr>
                     <form method="post" action="map.php">
+                        <input type="hidden" name="anime_id" value="<?php print $anime_id; ?>"/>
                         <td><?php print entity_str($spot['location_id']); ?></td>
                         <td><?php print entity_str($spot['spot_name']); ?></td>
                         <td><?php print entity_str($spot['spot_content']); ?></td>
@@ -70,6 +71,8 @@
             var markers = [];
             function initMap(){
                 map_spot = JSON.parse('<?php echo $spots_json; ?>');
+                console.log('hello');
+                
                 var map_box = document.getElementById('map_page_map_box');
                 var mapCenter = {
                   lat: parseFloat(map_spot[0]['lat']),
