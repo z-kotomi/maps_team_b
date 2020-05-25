@@ -13,13 +13,12 @@ header {
 .header_nemu{
     display:inline;
     float:right;
-    margin:30px 20px;
+    margin:30px 5px;
 }
 .header_spe{
-    border-left:solid 1px black;
     border-right:solid 1px black;
-    padding-left:30px;
-    padding-right:30px;
+    padding-left:5px;
+    padding-right:10px;
 }
 .header_link{
     color:black;
@@ -45,75 +44,116 @@ footer{
     color:black;
     text-decoration:none;
 }
+.login_content{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align:center;
+}
+.blue{
+    color:blue;
+}
+.red{
+    color:red;
+}
+.like_table{
+    border:solid 1px black;
+    border-collapse: collapse;
+    width:800px;
+    margin:0 auto;
+}
+.like_table_th,.like_table_td,.like_table_tr{
+    border:solid 1px black;
+    text-align:center;
+}
+#like_spot_map_box {
+    width: 960px;
+    height: 400px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+#map_page_map_box{
+    width: 960px;
+    height: 400px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+#create_route{
+    background-color:#FF8A00;
+    margin:0 auto;
+    width: 260px;
+    height: 40px;
+    text-align:center;
+    padding:5px;
+    border:1px solid #FF8A00;
+    border-radius:20px;
+}
+#route_text_content{
+    display: none; 
+    width:100%;
+    margin:0 auto;
+    padding-top:20px;
+}
+.like_table_content{
+    margin-bottom:20px;
+}
+.like_page_circle{
+    border:1px solid black;
+    background-color:black;
+    width: 12px;
+    height:12px;
+    border-radius:9px;
+    margin-bottom:30px;
+}
+.like_space{
+    width:60px;
+}
+.like_sport_img{
+    width:225px;
+}
 
-.list_table{
-    margin: 20px;
-}
-.like_button{
-    text-align: center;
-}
-.list_table{
-  width: 100%;
-  border-collapse:separate;
-  border-spacing: 0;
+.search_key{
+    width: 300px;
+    background-color: #C1EAFD;
+    text-align:center;
+    margin:100px auto;
+    padding: 15px;
 }
 
-.list_table .list_table_th:first-child{
-  border-radius: 5px 0 0 0;
+.search_keyword{
+  box-sizing: border-box;
+}
+.search_keyword input[type="text"]{
+  border: 1px solid #999;
+  padding: 3px 5px;
+  border-radius: 20px;
+  height: 2.0em;
+  width: 245px;
+  overflow: hidden;
+}
+.search_keyword input[type="text"]:focus {
+  outline: 0;
+}
+.search_keyword input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  outline : none;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.list_table .list_table_th:last-child{
-  border-radius: 0 5px 0 0;
-  border-right: 1px solid #3c6690;
-}
 
-.list_table_th{
-  text-align: center;
-  color:white;
-  background: linear-gradient(#C1EAFD,#668ad8);;
-  border-left: 1px solid #3c6690;
-  border-top: 1px solid #3c6690;
-  border-bottom: 1px solid #3c6690;
-  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
-  padding: 10px 0;
-}
 
-.list_table_td{
-  text-align: center;
-  border-left: 1px solid #a8b7c5;
-  border-bottom: 1px solid #a8b7c5;
-  border-top:none;
-  box-shadow: 0px -3px 5px 1px #eee inset;
-
-}
-.list_table_td:last-child{
-  border-right: 1px solid #a8b7c5;
-}
-.list_table_tr:last-child .list_table_td:last-child {
-  border-radius: 0 0 5px 0;
-}
-.list_table_caption{
-    color: #3c6690;
-    font-size: 20px;
-}
-.like_submit{
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: #668ad8;/*ボタン色*/
-    color: #FFF;
-    border-bottom: solid 4px #627295;
-    border-radius: 3px;
-}
-.like_submit:active{
-    /*ボタンを押したとき*/
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    border-bottom: none;/*線を消す*/
-}
-.return_link{
-    text-decoration: none;
-}
-.return_link:hover{
-    color: #330066;
-}
+/*.search_image{*/
+/*    width: 400px;*/
+/*    height: 300px;*/
+/*    background-image: url(../web_image/background-image.jpg);*/
+/*    margin:100px auto;*/
+/*    text-align:center;*/
+/*}*/
