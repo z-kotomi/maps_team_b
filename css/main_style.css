@@ -45,3 +45,75 @@ footer{
     color:black;
     text-decoration:none;
 }
+
+.list_table{
+    margin: 20px;
+}
+.like_button{
+    text-align: center;
+}
+.list_table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
+}
+
+.list_table .list_table_th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+.list_table .list_table_th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+.list_table_th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#C1EAFD,#668ad8);;
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  padding: 10px 0;
+}
+
+.list_table_td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+
+}
+.list_table_td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+.list_table_tr:last-child .list_table_td:last-child {
+  border-radius: 0 0 5px 0;
+}
+.list_table_caption{
+    color: #3c6690;
+    font-size: 20px;
+}
+.like_submit{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+.like_submit:active{
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+.return_link{
+    text-decoration: none;
+}
+.return_link:hover{
+    color: #330066;
+}

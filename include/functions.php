@@ -123,12 +123,12 @@ function get_request_method() {
 * @return str　不为空 POST値
 *               空     “”
 */
-function get_post_data($key) {
-   $str = '';
+function get_post_data($key, $default = '') {
+   
    if (isset($_POST[$key]) === TRUE) {
-       $str = $_POST[$key];
+       return $_POST[$key];
    }
-   return $str;
+   return $default;
 }
 
 
@@ -278,4 +278,14 @@ function db_update($sql){
 function print_data($data){
     var_dump($data);
     exit;
+}
+
+/**
+ * DB inset & update 実行
+ * @param object $link
+ * @param String &sql
+ * @return boolean true||false
+ */
+function query_db($link,$sql){
+    return mysqli_query($link,$sql);
 }
