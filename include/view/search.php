@@ -28,7 +28,7 @@
                     <?php foreach($result_list as $result) { ?>
                     <ol>
                         <li>
-                        <a href="maps.php?anime_id=<?php echo entity_str($result['anime_id']); ?>">
+                        <a href="map.php?anime_id=<?php echo entity_str($result['anime_id']); ?>">
                         <?php echo entity_str($result['anime_name']); ?>
                         </a>
                         </li>
