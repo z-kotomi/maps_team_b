@@ -123,12 +123,13 @@ function get_request_method() {
 * @return str　不为空 POST値
 *               空     “”
 */
-function get_post_data($key) {
-   $str = '';
+function get_post_data($key, $default = '') {
+   
    if (isset($_POST[$key]) === TRUE) {
+       return $_POST[$key];
        $str = trim($_POST[$key]);
    }
-   return $str;
+   return $default;
 }
 
 

@@ -8,7 +8,7 @@ $anime_name = '';
 $spots = [];
 $errors = [];
 $add_like = '';
-$like_sport_id = '';
+$like_spot_id = '';
 $user_id = '';
 
 session_start();
@@ -31,15 +31,15 @@ if($user_id!==''){
 
 //リクエストメソッド確認
 if (get_request_method() === 'POST'){
-    $like_sport_id = get_post_data('like_sport_id');
+    $like_spot_id = get_post_data('like_spot_id');
     $add_like = get_post_data('add_like');
     
-    if($like_sport_id!==''){
+    if($like_spot_id!==''){
         if($user_id !== ''){
-            $like_sport_id = intval($like_sport_id);
+            $like_spot_id = intval($like_spot_id);
             $time = get_time();
             $sql = "INSERT INTO like_spot_table(spot_id,user_id,created_date,updated_date)
-                    VALUES ({$like_sport_id},{$user_id},'{$time}','{$time}')";
+                    VALUES ({$like_spot_id},{$user_id},'{$time}','{$time}')";
             $aaa = db_insert($sql);
         }else{
             echo "<script>alert('登録下さい');location.href='login.php';</script>";
