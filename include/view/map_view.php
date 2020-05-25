@@ -41,7 +41,7 @@
                 </tr>
 <?php           foreach ($spots as $spot){ ?>
                 <tr>
-                    <form method="post" action="map.php">
+                    <form method="post" action="map.php?anime_id=<?php print entity_str($anime_id); ?>">
                         <td><?php print entity_str($spot['location_id']); ?></td>
                         <td><?php print entity_str($spot['spot_name']); ?></td>
                         <td><?php print entity_str($spot['spot_content']); ?></td>
@@ -52,7 +52,7 @@
                         <td><?php print entity_str($spot['business_content']); ?></td>
                         <td><?php print entity_str($spot['business_image']); ?></td>
                         <td>
-                            <button type ="submit" name="like_sport_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
+                            <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
                         </td>
                     </form>
                 </tr>
