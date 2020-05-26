@@ -51,7 +51,7 @@
                         <td><?php print entity_str($spot['business_time']); ?></td>
                         <td><?php print entity_str($spot['price']); ?></td>
                         <td><?php print entity_str($spot['business_content']); ?></td>
-                        <td><?php print entity_str($spot['business_image']); ?></td>
+                        <td><img src="<?php print entity_str($spot['business_image']); ?>" alt="business_image"></td>
                         <td>
                             <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
                         </td>
