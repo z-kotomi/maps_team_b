@@ -2,6 +2,7 @@
 require_once '../include/const.php';
 require_once '../include/functions.php';
 
+$user_id='';
 $address = '';
 $lat = '';
 $lng = '';
@@ -11,6 +12,23 @@ $spot_content = '';
 $errors = [];
 $message = '';
 
+
+session_start();
+//user_idを持っているか
+if (isset($_SESSION['user_id']) !== TRUE) {
+   //ログアウト済みの場合ログイン画面へリダイレクト
+   header('Location:login.php');
+   exit;
+}else{
+    $user_id = $_SESSION['user_id'];
+    $user_id = intval($user_id);
+}
+//DB user_id チェック
+if(($user_name = user_id_check($user_id)) === ''){
+    $_SESSION['login_error'] = ['user存在していない。'];
+    header('Location:login.php');
+    exit;
+}
 //POST値取得
 if(get_request_method() === 'POST'){
     //map_top.phpからの受け取り
