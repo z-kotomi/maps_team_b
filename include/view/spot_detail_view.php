@@ -23,6 +23,7 @@
             <p><?php print $error; ?></p>
 <?php       } ?>
 <?php   if($spots !== []){ ?>
+            <h2 id="detail_h2"><?php print $spots['anime_name']; ?></h2>
             <h2 id="detail_h2"><?php print $spots['spot_id'] . '：' . $spots['spot_name']; ?></h2>
             <div id="detail_page_map_box"></div>
             <img class="detail_img" src="<?php print $spots['spot_image']; ?>" alt="イメージ"></img>
