@@ -10,7 +10,7 @@ header {
     margin: 0 auto;
     width: 960px;
 }
-.header_nemu{
+.header_menu{
     display:inline;
     float:right;
     margin:30px 5px;
@@ -149,11 +149,6 @@ footer{
 }
 
 
-
-/*.search_image{*/
-/*    width: 400px;*/
-/*    height: 300px;*/
-/*    background-image: url(../web_image/background-image.jpg);*/
-/*    margin:100px auto;*/
-/*    text-align:center;*/
-/*}*/
+#add_spot_content{
+    width: 300px;
+}

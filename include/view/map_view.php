@@ -11,11 +11,11 @@
                 <a href="">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
-                <div class="header_nemu">ユーザー：<?php print $user_name; ?></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="">Menu</a></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="like.php">気になる</a></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="search.php">TOP</a></div>
+                <div class="header_menu">ユーザー：<?php print $user_name; ?></div>
+                <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="">Menu</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
         </header>
         <section class="content">
@@ -51,7 +51,7 @@
                         <td><?php print entity_str($spot['business_time']); ?></td>
                         <td><?php print entity_str($spot['price']); ?></td>
                         <td><?php print entity_str($spot['business_content']); ?></td>
-                        <td><?php print entity_str($spot['business_image']); ?></td>
+                        <td><img src="<?php print entity_str($spot['business_image']); ?>" alt="business_image"></td>
                         <td>
                             <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
                         </td>
