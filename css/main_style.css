@@ -152,3 +152,8 @@ footer{
 #add_spot_content{
     width: 300px;
 }
+
+.add_spot_key{
+    border-bottom:double 5px #C1EAFD;
+    height:20px;
+}
