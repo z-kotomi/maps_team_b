@@ -150,6 +150,10 @@ footer{
 #add_spot_content{
     width: 300px;
 }
+.add_spot_key{
+    border-bottom:double 5px #C1EAFD;
+    height:20px;
+}
 #detail_h2{
     text-align: center;
     margin: 20px auto;
@@ -201,10 +205,3 @@ footer{
     margin: 10px 0px 20px 0px;
         text-align: center;
 }
-/*.search_image{*/
-/*    width: 400px;*/
-/*    height: 300px;*/
-/*    background-image: url(../web_image/background-image.jpg);*/
-/*    margin:100px auto;*/
-/*    text-align:center;*/
-/*}*/
