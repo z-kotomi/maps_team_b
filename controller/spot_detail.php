@@ -15,13 +15,15 @@ if (get_request_method() === 'GET'){
 //サーバー接続
 $link = get_db_connect();
 //スポット詳細情報取得
-$sql = "SELECT spot_table.spot_id, location_table.location_id, 
+$sql = "SELECT anime_name, spot_table.spot_id, location_table.location_id, 
         spot_table.spot_name, 
         spot_table.spot_content,spot_table.spot_image, spot_table.business_name, 
         spot_table.business_time, spot_table.price, spot_table.business_content, spot_table.business_image,
         location_table.lat,location_table.lng 
-        FROM location_table
-        JOIN spot_table 
+        FROM anime_table
+        JOIN spot_table
+        ON anime_table.anime_id = spot_table.anime_id
+        JOIN location_table
         ON location_table.location_id = spot_table.location_id 
         WHERE spot_table.spot_id = {$spot_id}";
 //sql実行
