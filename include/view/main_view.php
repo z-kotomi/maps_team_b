@@ -11,11 +11,11 @@
                 <a href="">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
-                <div class="header_nemu">ユーザー：<?php print $user_name; ?></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="">Menu</a></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="like.php">気になる</a></div>
-                <div class="header_nemu header_spe"><a class="header_link" href="search.php">TOP</a></div>
+                <div class="header_menu">ユーザー：<?php print $user_name; ?></div>
+                <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="">Menu</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
         </header>
         <section class="main_content">
