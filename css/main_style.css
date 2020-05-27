@@ -301,6 +301,11 @@ footer{
     position: absolute;
     right: 0;
 }
+
+.header_user_name_text{
+    margin-top:0;
+}
+
 #map_h3{
     text-align: center;
     margin: 50px auto 20px auto;

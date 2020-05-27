@@ -79,7 +79,7 @@ if(isset($data[0]['user_id'])){
         $goto_next_page = $_SESSION['after_login_goto_page'];
     }
     header('Location:'.$goto_next_page);
-    unset($_SESSION['after_login_goto_page']);
+    unset($_SESSION['after_login_goto_page']);;
     exit;
 }else{
     $_SESSION['login_error'] = ['ユーザー名あるいはパスワードが違います'];
