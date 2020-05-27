@@ -87,7 +87,7 @@ if ($result = query_db($link, $sql)){
     //メモリ開放
     mysqli_free_result($result);
 } else {
-        $errors[] = '検索されたアニメが見つかりませんでした:' . $sql;
+        $errors[] = '検索されたアニメが見つかりませんでした:';
 }
 //サーバー切断
 close_db_connect($link);
