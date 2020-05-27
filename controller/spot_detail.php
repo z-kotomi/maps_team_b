@@ -14,6 +14,7 @@ $comment = '';
 $user_id = 0;
 $user_name = 'test';
 $created = '';
+$not_exist_comments = 1;
 
 //リクエストメソッド確認
 if (get_request_method() === 'GET'){
@@ -104,7 +105,7 @@ if ($result = query_db($link, $sql)){
     //メモリ開放
     mysqli_free_result($result);
 } else {
-    $errors[] = '口コミが見つかりませんでした';
+    $not_exist_comments;
 }
 
 //サーバー切断

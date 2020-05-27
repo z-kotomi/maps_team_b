@@ -70,6 +70,7 @@
                     </form>
                 </div>
             </label>
+<?php     if($not_exist_comments === FALSE) { ?>
             <table id="comment_table">
                 <caption>口コミ一覧</caption>
                 <tr>
@@ -85,6 +86,7 @@
                 </tr>
                 <?php } ?>
             </table>
+<?php     } ?>
             <div class="return_div"><a  class="return_link" href="main.php">TOPへ戻る</a></div>
         </section>
         <script>
