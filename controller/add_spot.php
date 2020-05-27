@@ -17,6 +17,7 @@ session_start();
 //user_idを持っているか
 if (isset($_SESSION['user_id']) !== TRUE) {
    //ログアウト済みの場合ログイン画面へリダイレクト
+   $_SESSION['login_error'] = ['スポット追加はユーザ登録必要があります。<br>登録してください'];
    header('Location:login.php');
    exit;
 }else{
@@ -31,7 +32,9 @@ if(($user_name = user_id_check($user_id)) === ''){
 }
 //POST値取得
 if(get_request_method() === 'POST'){
-    //map_top.phpからの受け取り
+
+    //main.phpからの受け取り
+
     $address = get_post_data('new_address');
     $lat = get_post_data('new_lat');
     $lng = get_post_data('new_lng');

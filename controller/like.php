@@ -12,6 +12,8 @@ session_start();
 //今user登録状態判断
 if (isset($_SESSION['user_id']) !== TRUE) {
    // ログアウト済みの場合、ログイン画面へリダイレクト
+   $_SESSION['login_error'] = ['気になる機能はユーザ登録必要があります。<br>登録してください'];
+   $_SESSION['after_login_goto_page'] = 'like.php';
    header('Location:login.php');
    exit;
 }else{
