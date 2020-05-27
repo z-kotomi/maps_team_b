@@ -301,3 +301,6 @@ footer{
     position: absolute;
     right: 0;
 }
+.header_user_name_text{
+    margin-top:0;
+}
