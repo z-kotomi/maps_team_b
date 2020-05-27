@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Map画面</title>
         <link rel="stylesheet" href="../css/main_style.css" type="text/css" />
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
         <header>
@@ -52,18 +53,13 @@
                         <td><?php print entity_str($spot['price']); ?></td>
                         <td class="map_page_table_td"><div class="map_page_table_text"><?php print entity_str($spot['business_content']); ?></div></td>
                         <td class="map_page_table_td">
-                            <button id="like" type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
+                            <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
                         </td>
                     </form>
                 </tr>
 <?php   } ?>
             </table></div>
 <?php       } ?>
-            <div id="popup_layer"></div>
-            <div id="map_page_popup">
-                <div>気になる登録しました！</div>
-                <input type="button" id="popup_close" value="閉じる">
-            </div>
             <div class="return_div"><a class="return_link" href="search.php">検索画面に戻る</a></div>
         </section>
         <script>
@@ -110,17 +106,6 @@
                     markers.push(marker);
                 });
             }
-
-            $(function(e){
-                //気になるボタンクリック時にポップアップ表示
-                $("#like").click(function(e){
-                    $("#map_page_popup, #popup_layer").show();
-                });
-                //ポップアップの閉じるボタンクリック時の処理
-                $("#popup_close, #pop_up_layer").click(function(){
-                    $("#popup_close, #popup_layer").hide();
-                });
-            });
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&callback=initMap"></script>
         <footer>
