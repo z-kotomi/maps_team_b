@@ -8,13 +8,14 @@
     <body>
         <header>
             <div class="header_box">
-                <a href="">
+                <a href="main.php">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
-                <div class="header_menu"><a class="header_link" href="">Menu</a></div>
+                <div class="header_menu">ユーザー：<?php print $user_name; ?></div>
+                <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="search.php">検索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
-                <div class="header_menu header_spe" ><a class="header_link" href="logout.php">ログアウト</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="">TOP</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="main.php">TOP</a></div>
             </div>
         </header>
         <section class="content">
@@ -24,7 +25,7 @@
             
             <form action="add_spot.php" method="post">
                 <p><span class="add_spot_key">位置情報</span></p>
-                <label>住所　<input type="text" name="address" value="<?php print entity_str($address) ?>"></label><br>
+                <label>住所　<input class="add_view_address_text"type="text" name="address" value="<?php print entity_str($address) ?>"></label><br>
                 <label>緯度　<input type="text" name="lat" value="<?php print entity_str($lat) ?>"></label><br>
                 <label>経度　<input type="text" name="lng" value="<?php print entity_str($lng) ?>"></label>
                 <br>
