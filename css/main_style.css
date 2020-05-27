@@ -33,7 +33,7 @@ footer{
     margin:0 auto;
     padding-bottom:15px;
 }
-.content{
+.content,.main_content{
     margin:0 auto;
     width: 960px;
 }
@@ -79,6 +79,34 @@ footer{
     height: 400px;
     margin-top:20px;
     margin-bottom:20px;
+}
+#main_map_box{
+    width: 600px;
+    height: 800px;
+    float:left;
+}
+.main_list_section{
+    width:340px;
+    height:800px;
+    border:solid 1px black;
+    float:right;
+    overflow:auto;
+}
+.main_map_addspot{
+    text-align:center;
+}
+.main_content{
+    overflow: hidden;
+}
+.main_li_no_spot{
+    list-style-type:none
+}
+.marker_content_img{
+    width:200px;
+}
+.marker_content_img_div{
+    width:100%;
+    text-align:center;
 }
 #create_route{
     background-color:#FF8A00;
