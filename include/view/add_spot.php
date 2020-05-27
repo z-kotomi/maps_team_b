@@ -15,6 +15,8 @@
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="search.php">検索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
+                <div class="header_menu header_spe" ><a class="header_link" href="logout.php">ログアウト</a></div>
+
                 <div class="header_menu header_spe"><a class="header_link" href="main.php">TOP</a></div>
             </div>
         </header>
