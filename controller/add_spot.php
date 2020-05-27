@@ -32,9 +32,9 @@ if(($user_name = user_id_check($user_id)) === ''){
 //POST値取得
 if(get_request_method() === 'POST'){
     //map_top.phpからの受け取り
-    $address = get_post_data('address');
-    $lat = get_post_data('lat');
-    $lng = get_post_data('lng');
+    $address = get_post_data('new_address');
+    $lat = get_post_data('new_lat');
+    $lng = get_post_data('new_lng');
     
     //view/add_spot.phpからの受け取り
     $anime_name = get_post_data('anime_name');

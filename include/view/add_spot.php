@@ -14,7 +14,7 @@
                 <div class="header_menu"><a class="header_link" href="">Menu</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
                 <div class="header_menu header_spe" ><a class="header_link" href="logout.php">ログアウト</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="">TOP</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="main.php">TOP</a></div>
             </div>
         </header>
         <section class="content">
