@@ -73,7 +73,13 @@ if(isset($data[0]['user_id'])){
     if(db_update($sql)===false){
         $error[] = 'ログイン時間記録失敗。';
     }
-    header('Location:map.php');
+    //
+    $goto_next_page = 'main.php';
+    if(isset($_SESSION['after_login_goto_page'])){
+        $goto_next_page = $_SESSION['after_login_goto_page'];
+    }
+    header('Location:'.$goto_next_page);
+    unset($_SESSION['after_login_goto_page']);
     exit;
 }else{
     $_SESSION['login_error'] = ['ユーザー名あるいはパスワードが違います'];

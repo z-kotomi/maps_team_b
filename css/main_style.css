@@ -230,6 +230,14 @@ footer{
 	color: #fff;
 }
 .return_div{
+    margin: 10px 0px 20px 0px;
+        text-align: center;
+}
+.add_view_address_text{
+    width:500px;
+}
+.user_name_text{
+    margin-top:0;
     margin: 10px auto 20px auto;
     width: 150px;
     text-align: center;

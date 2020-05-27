@@ -8,14 +8,22 @@
     <body>
         <header>
             <div class="header_box">
-                <a href="">
+                <a href="main.php">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
-                <div class="header_menu">ユーザー：<?php print $user_name; ?></div>
+                <div class="header_menu">
+                <?php if($user_name ==''){ ?>
+                <a class="header_link" href="login.php">登録</a>
+                <?php } else{?>
+                <p class="user_name_text">ユーザー：<?php print $user_name;?></p>
+                <?php } ?>
+                </div>
+                <?php if($user_name !== ''){ ?>
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="">Menu</a></div>
+                <?php }?>
+                <div class="header_menu header_spe"><a class="header_link" href="search.php">検索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="main.php">TOP</a></div>
             </div>
         </header>
         <section class="main_content">
@@ -169,7 +177,7 @@
                             var contentString = '<h1>ここにアニメスポットを追加したいですか</h1>'+
                                               '<p>追加したい場所：'+ add_address +'</p>'+
                                               '<form method="post" action="add_spot.php" class="main_map_addspot">'+
-                                                    '<input type="hidden" name="new_address value="'+ add_address　+'"/>'+
+                                                    '<input type="hidden" name="new_address" value="'+ add_address　+'"/>'+
                                                     '<input type="hidden" name="new_lat" value="'+ latlng.lat() +'"/>'+
                                                     '<input type="hidden" name="new_lng" value="'+ latlng.lng()+'"/>'+
                                                     '<input type="submit" value="追加"/>'+
