@@ -15,7 +15,7 @@
                 <?php if($user_name ==''){ ?>
                 <a class="header_link" href="login.php">登録</a>
                 <?php } else{?>
-                <p class="user_name_text">ユーザー：<?php print $user_name;?></p>
+                <p class="header_user_name_text">ユーザー：<?php print $user_name;?></p>
                 <?php } ?>
                 </div>
                 <?php if($user_name !== ''){ ?>
@@ -64,21 +64,22 @@
             </table>
 <?php       } ?>
             <label class="comment_label">
-                <span class="add_comment_title">口コミを投稿</span>
+                <span id="add_comment_btn" class="add_comment_title">口コミを投稿</span>
                 <input type="checkbox" name="checkbox" id=comment_checkbox>
                 <div id="popup">
                     <label for="comment_checkbox" class="icon-close">×</label>
                     <p>ユーザー名:<?php print h($user_name); ?>さん</p>
-                    <form method="POST" action="spot_detail.php">
+                    <form method="post" action="spot_detail.php">
                         <label class="comment_form">
                             口コミ内容:<br>
                             <textarea name="comment" rows="3" cols="30" wrap=”hard”></textarea>
                         </label><br>
+                        <input type="hidden" name="spot_id" value="<?php print $spot_id;?>"/>
                         <input type=submit name="submit" value="投稿する">
                     </form>
                 </div>
             </label>
-<?php     if($not_exist_comments === FALSE) { ?>
+<?php     if(count($comments)>0) { ?>
             <table id="comment_table">
                 <caption>口コミ一覧</caption>
                 <tr>
@@ -98,7 +99,10 @@
             <div class="return_div"><a  class="return_link" href="main.php">TOPへ戻る</a></div>
         </section>
         <script>
+            var user_name;
             function initMap(){
+                user_name = '<?php print $user_name;?>';
+                // console.log('user name:',user_name);
                 var map_spot = JSON.parse('<?php echo $spots_json; ?>');
                 var map_box = document.getElementById('detail_page_map_box');
                 var mapCenter = {
@@ -120,6 +124,18 @@
                     map: map,
                     position: mapCenter,
                 });
+                
+                document.getElementById('add_comment_btn').addEventListener('click',login_judge,false)
+            }
+            function login_judge(){
+                if(user_name==''){
+                    if (confirm("登録して下さい！")){
+                        window.location='login.php';
+                    }else{
+                        // document.getElementById('add_comment_btn').style.display="none";
+                        window.location.reload();
+                    }
+                }
             }
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&callback=initMap"></script>

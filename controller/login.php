@@ -8,7 +8,12 @@ session_start();
 if (isset($_SESSION['user_id']) === TRUE) {
    // ログイン済みの場合、ホームページへリダイレクト
    //*****/
-   header('Location:like.php');
+   $goto_next_page = 'main.php';
+    if(isset($_SESSION['after_login_goto_page'])){
+        $goto_next_page = $_SESSION['after_login_goto_page'];
+    }
+    header('Location:'.$goto_next_page);
+    unset($_SESSION['after_login_goto_page']);;
    exit;
 }
 if(isset($_SESSION['login_error'])){
