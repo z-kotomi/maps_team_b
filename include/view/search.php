@@ -11,7 +11,7 @@
                 <a href="">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
-                <div class="header_menu"><a class="header_link" href="">Menu</a></div>
+                <div class="header_menu "><a class="header_link" href="">Menu</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="">気になる</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
