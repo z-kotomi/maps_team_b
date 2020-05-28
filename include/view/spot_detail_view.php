@@ -66,6 +66,7 @@
             <label class="comment_label">
                 <span id="add_comment_btn" class="add_comment_title">口コミを投稿</span>
                 <input type="checkbox" name="checkbox" id=comment_checkbox>
+<?php       if($user_name !== ''){ ?>
                 <div id="popup">
                     <label for="comment_checkbox" class="icon-close">×</label>
                     <p>ユーザー名:<?php print h($user_name); ?>さん</p>
@@ -78,6 +79,7 @@
                         <input type=submit name="submit" value="投稿する">
                     </form>
                 </div>
+<?php       } ?>
             </label>
 <?php     if(count($comments)>0) { ?>
             <table id="comment_table">
