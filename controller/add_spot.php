@@ -11,9 +11,6 @@ $spot_name = '';
 $spot_content = '';
 $errors = [];
 $message = '';
-$insert_address = '';
-$insert_lat = '';
-$insert_lng = '';
 
 
 session_start();
@@ -41,14 +38,11 @@ if(get_request_method() === 'POST'){
     $address = get_post_data('new_address');
     $lat = get_post_data('new_lat');
     $lng = get_post_data('new_lng');
-   
+    
     //view/add_spot.phpからの受け取り
     $anime_name = get_post_data('anime_name');
     $spot_name = get_post_data('spot_name');
     $spot_content = get_post_data('spot_content');
-    $insert_address = get_post_data('address');
-    $insert_lat = get_post_data('lat');
-    $insert_lng = get_post_data('lng');
     
     if($anime_name === ''){
         $errors[] = 'アニメの名前を入力してください';
@@ -62,10 +56,8 @@ if(get_request_method() === 'POST'){
     
     if(count($errors) === 0){
         //INSERT
-        $sql = "INSERT INTO 
-                    new_spot_table(anime_name,spot_name,spot_content,address,lat,lng)
-                VALUES 
-                    ('{$anime_name}', '{$spot_name}', '{$spot_content}', '{$insert_address}', '{$insert_lat}', '{$insert_lng}')";
+        $sql = "INSERT INTO new_spot_table(anime_name,spot_name,spot_content,address,lat,lng)
+                VALUES ('{$anime_name}', '{$spot_name}', '{$spot_content}', '{$address}', {$lat}, {$lng})";
         $result = db_insert($sql);
         if($result === FALSE){
             $errors[] = 'INSERT失敗' . $sql;
