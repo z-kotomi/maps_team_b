@@ -16,7 +16,7 @@
                 <?php if($user_name ==''){ ?>
                 <a class="header_link" href="login.php">登録</a>
                 <?php } else{?>
-                <p class="header_user_name_text">ユーザー：<?php print $user_name;?></p>
+                <p class="user_name_text">ユーザー：<?php print $user_name;?></p>
                 <?php } ?>
                 </div>
                 <?php if($user_name !== ''){ ?>
