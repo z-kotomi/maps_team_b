@@ -43,6 +43,7 @@ if (get_request_method() === 'POST'){
             $aaa = db_insert($sql);
         }else{
             echo "<script>alert('登録下さい');location.href='login.php';</script>";
+            $_SESSION['after_login_goto_page'] = 'map.php';
         }
     }
 }
@@ -55,6 +56,7 @@ if (isset($_GET['anime_id']) === TRUE) {
         $errors[] = '検索されたアニメが見つかりませんでした';
     }else{
         $anime_id = intval($anime_id);
+        $_SESSION['login_goto_map_anime_id'] = $anime_id;
     }
 }else if(get_request_method() === 'POST'){
     $anime_id = get_post_data('anime_id');

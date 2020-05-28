@@ -10,7 +10,7 @@
             <div class="header_box">
                 <a href="main.php">
                     <img class="logo" src="../web_image/logo.png"></img>
-                    <div class="header_menu"><a class="header_link" href="main.php">TOP</a></div>
+                    <div class="header_menu"><a class="header_link" href="search.php">TOP</a></div>
                 </a>
             </div>
         </header>
