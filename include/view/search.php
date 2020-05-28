@@ -45,6 +45,12 @@
                     </ol>
                     <?php } ?>
             </div>
+            <div class="search_area">
+                <p>地域のキーワードを入力してください</p>
+                <form method="POST" action="map_area.php">
+                    <input type="text" name="area">
+                    <input type="submit" name="submit" value="送信">
+            </div>
 
         </section>
         <footer>
