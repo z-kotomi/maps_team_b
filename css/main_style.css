@@ -76,7 +76,7 @@ footer{
 }
 #map_page_map_box{
     width: 960px;
-    height: 400px;
+    height: 480px;
     margin-top:20px;
     margin-bottom:20px;
 }
@@ -343,13 +343,9 @@ footer{
 .map_page_table_text{
     width: 200px;
 }
-.comment_list_scroll{
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-    white-space: nowrap;
+.map_page_map_btn{
+    width:40px;
+    height:40px;
+    margin-left:100px;
 }
-#comment_caption{
-    text-align: center;
-    color: #5989cf;
-}
+

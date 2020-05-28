@@ -34,45 +34,39 @@
         　　<div id="map_page_map_box"></div>
 <?php   if($spots !== []){ ?>
             <h3 id="map_h3"><?php print $spots[0]['anime_name'] . "聖地リスト" ;?></h3>
-            <div class="list_scroll">
-                <table class="map_page_table">
-                    <?php foreach($spots as $spot){ ?>
-                    <tr>
-                        <td>
-                            <form method="post" action="map.php">
-                                <input type="hidden" name="anime_id" value="<?php print $anime_id; ?>"/>
-                                <div style="float:right;margin-right:100px;margin-top:20px">
-                                    <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
-                                    <img class="map_page_map_btn" data-spotid="<?php print entity_str($spot['spot_id']); ?>" src="../web_image/map_page_map.png"></img>
-                                </div>
-                                <div style="margin-left:20px">
-                                    <h2>#<?php print entity_str($spot['location_id']);?>&nbsp;&nbsp;<?php print entity_str($spot['spot_name']); ?></h2>
-                                </div>
-                                <h3 style="margin-left:50px"><strong><?php print entity_str($spot['spot_content']); ?></strong></h3>
-                                <div style="display:flex">
-                                    <div style="margin-left:100px;margin-right:80px;text-align: center">
-                                        <p><strong>アニメ中の画面</strong></p>
-                                        <p>&nbsp;</p>
-                                        <img class="map_page_img" src="<?php print entity_str($spot['spot_image']); ?>"></img>
-                                    </div>
-                                    <div style="text-align: center">
-                                        <p><strong>現地の画面</strong></p>
-                                        <p><?php print entity_str($spot['business_name']); ?></p>
-                                        <img class="map_page_img" src="<?php print entity_str($spot['business_image']); ?>"></img>
-                                    </div>
-                                </div>
-                                <div style="margin-left:20px">
-                                    <p><strong>営業時間：</strong><?php print entity_str($spot['business_time']); ?></p>
-                                    <p><strong>価格：</strong><?php print entity_str($spot['price']); ?></p>
-                                    <p><strong>営業内容：</strong><?php print entity_str($spot['business_content']); ?></p>
-                                </div>
-                                
-                            </form>
+            <div class="list_scroll"><table class="map_page_table">
+                <tr>
+                    <th>No</th>
+                    <th>場所</th>
+                    <th>シーン</th>
+                    <th>スポット画像</th>
+                    <th>営業施設</th>
+                    <th>施設画像</th>
+                    <th>営業時間</th>
+                    <th>価格</th>
+                    <th>営業内容</th>
+                    <th>気になる</th>
+                </tr>
+<?php           foreach ($spots as $spot){ ?>
+                <tr>
+                    <form method="post" action="map.php">
+                        <input type="hidden" name="anime_id" value="<?php print $anime_id; ?>"/>
+                        <td><div class="map_page_location_id"><?php print entity_str($spot['location_id']); ?></div></td>
+                        <td><div class="map_page_spot_name"><?php print entity_str($spot['spot_name']); ?></div></td>
+                        <td class="map_page_table_td"><div class="map_page_table_text"><?php print entity_str($spot['spot_content']); ?></div></td>
+                        <td><img class="map_page_img" src="<?php print entity_str($spot['spot_image']); ?>" alt="spot_image"></td>
+                        <td><div class="map_page_spot_name"><?php print entity_str($spot['business_name']); ?></div></td>
+                        <td><img class="map_page_img" src="<?php print entity_str($spot['business_image']); ?>" alt="business_image"></td>
+                        <td class="map_page_table_td"><?php print entity_str($spot['business_time']); ?></td>
+                        <td><?php print entity_str($spot['price']); ?></td>
+                        <td class="map_page_table_td"><div class="map_page_table_text"><?php print entity_str($spot['business_content']); ?></div></td>
+                        <td class="map_page_table_td">
+                            <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
                         </td>
-                    </tr>
-                    <?php } ?>
-                </table>
-            </div>
+                    </form>
+                </tr>
+<?php   } ?>
+            </table></div>
 <?php       } ?>
             <div class="return_div"><a class="return_link" href="search.php">検索画面に戻る</a></div>
         </section>
@@ -105,7 +99,6 @@
                     addMaker();
                 }
                 markers_monitor();
-                list_map_monitor();
             }
               
             function addMaker(){
@@ -152,29 +145,6 @@
                                     '<p>'+spot_content+'...</p>'+
                                     '<p><a href="spot_detail.php?spot_id='+map_spot[marker_num]['spot_id']+'">詳細へ</a></p>';
                 return contentString
-            }
-            function list_map_monitor(){
-                //spotid
-                var map_page_map_btns = Array.from(document.getElementsByClassName('map_page_map_btn'));
-                map_page_map_btns.forEach(function(map_page_map_btn){
-                    map_page_map_btn.addEventListener('click',function(){
-                        console.log("click");
-                        var spot_id = map_page_map_btn.dataset.spotid;
-                        spot_id = parseInt(spot_id);
-                        var marker_num;
-                        for (var i = 0; i < map_spot.length; i++) {
-                            if(map_spot[i]['spot_id'] == spot_id){
-                                marker_num = i;
-                                break;
-                            }
-                        }
-                        var lat = parseFloat(map_spot[marker_num]['lat']);
-                        var lng = parseFloat(map_spot[marker_num]['lng']);
-                        var latLng = new google.maps.LatLng(lat,lng);
-                        map.setZoom(16);
-                        map.panTo(latLng);
-                    });
-                });
             }
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&callback=initMap"></script>

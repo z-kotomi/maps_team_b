@@ -43,9 +43,15 @@
                 </ul>
             </div>
         </section>
-        <div id="main" style="position:absolute;">
-            <div style="text-align:right;cursor:pointer;" id="close">閉める</div>
-            <img src="../web_image/important.png" border="0" width="150" height="150" />
+        <div id="important" style="position:absolute;">
+            <div style="text-align:right;cursor:pointer;" id="closeA">閉める</div>
+            <img src="../web_image/important.png" border="0" width="100" height="100" />
+        </div>
+        <div id="questionnaire" style="position:absolute;">
+            <div style="text-align:right;cursor:pointer;" id="closeB">閉める</div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSff6vaW9x0bmzNCcnT49xZ4S8eFlOq4LID_qun_nHK65Tu0ng/viewform" target="_blank">
+                <img src="../web_image/questionnaire.jpg" border="0" width="150" height="100" />
+            </a>
         </div>
         <footer>
             <section class="foot_all">
@@ -196,12 +202,17 @@
                 });
             }
             $(function() {
-                $("#close").click(function() {
-                $("#main").hide();
+                $("#closeA").click(function() {
+                    $("#important").hide();
+                });
+                $("#closeB").click(function() {
+                    $("#questionnaire").hide();
                 });
             });
-            var ad1 = new AdMove("main", true);
+            var ad1 = new AdMove("important", true);
             ad1.Run();
+            var ad2 = new AdMove("questionnaire",true);
+            ad2.Run();
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&libraries=places&callback=initMap"></script>
     </body>
