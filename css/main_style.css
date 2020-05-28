@@ -343,3 +343,13 @@ footer{
 .map_page_table_text{
     width: 200px;
 }
+.comment_list_scroll{
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    white-space: nowrap;
+}
+#comment_caption{
+    text-align: center;
+    color: #5989cf;
+}
