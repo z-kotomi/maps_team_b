@@ -11,10 +11,15 @@ if (isset($_SESSION['user_id']) === TRUE) {
    $goto_next_page = 'main.php';
     if(isset($_SESSION['after_login_goto_page'])){
         $goto_next_page = $_SESSION['after_login_goto_page'];
+        if($goto_next_page == 'map.php'){
+            $anime_id = $_SESSION['login_goto_map_anime_id'];
+            $goto_next_page = $goto_next_page.'?anime_id='.$anime_id;
+            unset($_SESSION['login_goto_map_anime_id']);;
+        }
     }
     header('Location:'.$goto_next_page);
     unset($_SESSION['after_login_goto_page']);;
-   exit;
+    exit;
 }
 if(isset($_SESSION['login_error'])){
     $error = $_SESSION['login_error'];
