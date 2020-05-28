@@ -11,9 +11,9 @@ $spot_name = '';
 $spot_content = '';
 $errors = [];
 $message = '';
-$new_address = '';
-$new_lat = '';
-$new_lng = '';
+$insert_address = '';
+$insert_lat = '';
+$insert_lng = '';
 
 
 session_start();
