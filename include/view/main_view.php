@@ -21,9 +21,9 @@
                 <?php if($user_name !== ''){ ?>
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
                 <?php }?>
-                <div class="header_menu header_spe"><a class="header_link" href="search.php">検索</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="main.php">聖地一覧</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="main.php">TOP</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
         </header>
         <section class="main_content">
@@ -43,6 +43,10 @@
                 </ul>
             </div>
         </section>
+        <div id="main" style="position:absolute;">
+            <div style="text-align:right;cursor:pointer;" id="close">閉める</div>
+            <img src="../web_image/important.png" border="0" width="150" height="150" />
+        </div>
         <footer>
             <section class="foot_all">
                 <p style="text-align:center"><a class="foot_link" href="question.php">お問い合わせ</a></p>
@@ -50,6 +54,8 @@
                 <p style="text-align:center;color:black;font-size:10px"><small>Copyright &copy; B-Team All Rights Reserved.</small></p>
             </section>
         </footer>
+        <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../JS/main_js.js"></script>
         <script>
             var spot_data;
             var map;
@@ -189,6 +195,13 @@
                     });
                 });
             }
+            $(function() {
+                $("#close").click(function() {
+                $("#main").hide();
+                });
+            });
+            var ad1 = new AdMove("main", true);
+            ad1.Run();
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&libraries=places&callback=initMap"></script>
     </body>
