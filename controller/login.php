@@ -8,7 +8,7 @@ session_start();
 if (isset($_SESSION['user_id']) === TRUE) {
    // ログイン済みの場合、ホームページへリダイレクト
    //*****/
-   $goto_next_page = 'main.php';
+   $goto_next_page = 'search.php';
     if(isset($_SESSION['after_login_goto_page'])){
         $goto_next_page = $_SESSION['after_login_goto_page'];
         if($goto_next_page == 'map.php'){
