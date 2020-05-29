@@ -14,7 +14,7 @@
                 </a>
                 <div class="header_menu">
                 <?php if($user_name ==''){ ?>
-                <a class="header_link" href="login.php">登録</a>
+                <a class="header_link" href="login.php">ログイン</a>
                 <?php } else{?>
                 <p class="header_user_name_text">ユーザー：<?php print $user_name;?></p>
                 <?php } ?>
@@ -23,7 +23,7 @@
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
                 <?php }?>
                 <div class="header_menu header_spe"><a class="header_link" href="main.php">聖地一覧</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート探索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
         </header>
@@ -46,7 +46,7 @@
                     <th>営業時間</th>
                     <th>価格</th>
                     <th>営業内容</th>
-                    <th>気になる</th>
+                    <th>マーカー登録</th>
                 </tr>
 <?php           foreach ($spots as $key){ foreach($key as $spot) {;?>
                 <tr>
@@ -64,7 +64,7 @@
                         <td><?php print entity_str($spot['price']); ?></td>
                         <td class="map_page_table_td"><div class="map_page_table_text"><?php print entity_str($spot['business_content']); ?></div></td>
                         <td class="map_page_table_td">
-                            <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
+                            <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >マーカー登録</button>
                         </td>
                     </form>
                 </tr>

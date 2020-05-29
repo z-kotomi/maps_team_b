@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>気になるページ</title>
+        <title>ルート探索</title>
         <link rel="stylesheet" href="../css/main_style.css" type="text/css" />
     </head>
     <body>
