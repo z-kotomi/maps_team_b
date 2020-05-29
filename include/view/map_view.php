@@ -9,7 +9,7 @@
     <body>
         <header>
             <div class="header_box">
-                <a href="main.php">
+                <a href="search.php">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
                 <div class="header_menu">
@@ -42,7 +42,7 @@
                             <form method="post" action="map.php">
                                 <input type="hidden" name="anime_id" value="<?php print $anime_id; ?>"/>
                                 <div style="float:right;margin-right:100px;margin-top:20px">
-                                    <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >気になる登録</button>
+                                    <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >マーカー登録</button>
                                     <img class="map_page_map_btn" data-spotid="<?php print entity_str($spot['spot_id']); ?>" src="../web_image/map_page_map.png"></img>
                                 </div>
                                 <div style="margin-left:20px">

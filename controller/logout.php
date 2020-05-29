@@ -11,5 +11,5 @@ if(isset($_COOKIE[$session_name])){
 }
 
 session_destroy();
-header('Location:main.php');
+header('Location:search.php');
 exit;

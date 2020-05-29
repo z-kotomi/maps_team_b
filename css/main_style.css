@@ -314,6 +314,10 @@ footer{
 .map_page_location_id{
     text-align: center;
 }
+.map_page_anime_name{
+    width: 120px;
+    text-align: center;
+}
 .map_page_spot_name{
     width: 120px;
     text-align: center;

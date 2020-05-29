@@ -2,14 +2,14 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>検索画面</title>
+        <title>B-team</title>
         <link rel="stylesheet" href="../css/main_style.css" type="text/css" />
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
         <header>
             <div class="header_box">
-                <a href="main.php">
+                <a href="search.php">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
                 <div class="header_menu">
@@ -22,9 +22,8 @@
                 <?php if($user_name !== ''){ ?>
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
                 <?php }?>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート検索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="main.php">聖地一覧</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
         </header>
         <section class="content">
