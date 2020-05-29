@@ -8,7 +8,7 @@
     <body>
         <header>
             <div class="header_box">
-                <a href="main.php">
+                <a href="search.php">
                     <img class="logo" src="../web_image/logo.png"></img>
                     <div class="header_menu"><a class="header_link" href="search.php">TOP</a></div>
                 </a>
