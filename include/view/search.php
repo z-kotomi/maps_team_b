@@ -47,7 +47,7 @@
                         <?php } ?>
                 </div>
                 <div class="search_area">
-                    <form method="post" action="search.php" class="search_container">
+                    <form method="post" action="map_area.php" class="search_container">
                         <input type="text" name="area" placeholder="地名を入力してください">
                         <input type="submit" name="submit" value="&#xf002">
                     </form>
@@ -85,16 +85,6 @@
                 </div>
                 <p class="service_border"></p>
             </div>
-<<<<<<< HEAD
-            <div class="search_area">
-                <p>地域のキーワードを入力してください</p>
-                <form method="POST" action="map_area.php">
-                    <input type="text" name="area">
-                    <input type="submit" name="submit" value="送信">
-            </div>
-
-=======
->>>>>>> issue/79
         </section>
         <footer>
             <section class="foot_all">
