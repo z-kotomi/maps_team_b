@@ -92,6 +92,7 @@ footer{
     border:solid 1px black;
     float:right;
     overflow:auto;
+    background-color: white;
 }
 .main_map_addspot{
     text-align:center;
@@ -127,6 +128,10 @@ footer{
 }
 .like_table_content{
     margin-bottom:20px;
+    padding-top: 20px;
+}
+.like_table_content table{
+    background-color: white;
 }
 .like_page_circle{
     border:1px solid black;
@@ -156,7 +161,8 @@ footer{
 }
 #detail_h2{
     text-align: center;
-    margin: 20px auto;
+    margin: 0px auto 20px auto;
+    padding-top: 20px;
     color: #777777;
 }
 #detail_page_map_box{
@@ -179,6 +185,7 @@ footer{
     border-radius: 20px;
     margin: 20px auto;
     padding: 6px;
+    width: 96%;
     color: #5989cf;
     background-color: #c6e4ff;
     clear: both;
@@ -202,7 +209,7 @@ footer{
 	color: #fff;
 }
 .return_div{
-    margin: 10px 0px 20px 0px;
+    padding: 10px 0px 20px 0px;
     text-align: center;
 }
 .add_view_address_text{
@@ -286,8 +293,10 @@ footer{
 .list_scroll{
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
-    width: 100%;
+    width: 96%;
     height: 700px;
+    background-color: white;
+    margin: 0px auto;
 }
 .map_page_table{
     border: 1px solid #777777;
@@ -320,9 +329,25 @@ footer{
     height:40px;
     margin-left:100px;
 }
+.comment_list_scroll{
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    white-space: nowrap;
+}
+#comment_caption{
+    text-align: center;
+    color: #5989cf;
+}
+#search_list{
+    margin: 20px 0px;
+}
+#search_list ul,li{
+    display: inline;
+}
 #anime_list{
     width: 95%;
-    margin: 0 auto;
+    margin: 40px auto 0px auto;
 }
 #serch{
     display: flex;
@@ -397,4 +422,15 @@ footer{
 .service_border{
     border-bottom: 2px solid #999999;
     margin: 10px 40px;
+}
+#add_h1{
+    margin: 0px;
+    padding: 20px;
+}
+#add_form{
+    padding-left: 20px;
+}
+.add_p{
+    margin: 0px;
+    padding: 12px 20px;
 }

@@ -35,22 +35,22 @@
                         <input type="text" name="key_word" placeholder="アニメ名を入力してください">
                         <input type="submit" name="submit" value="&#xf002">
                     </form>
-                        <p><?php print entity_str($result_message); ?></p>
-                        <?php foreach($result_list as $result) { ?>
-                        <ol>
-                            <li>
-                            <a href="map.php?anime_id=<?php echo entity_str($result['anime_id']); ?>">
-                            <?php echo entity_str($result['anime_name']); ?>
-                            </a>
-                            </li>
-                        </ol>
-                        <?php } ?>
+                        <div id="search_list"><?php print entity_str($result_message); ?>
+                            <?php foreach($result_list as $result) { ?>
+                            <ul>
+                                <li>
+                                <a href="map.php?anime_id=<?php echo entity_str($result['anime_id']); ?>">
+                                <?php echo entity_str($result['anime_name']); ?>
+                                </a>
+                                </li>
+                            </ul>
+                            <?php } ?>
+                        </div>
                 </div>
-                <div class="search_area">
-                    <form method="post" action="search.php" class="search_container">
+                <div class="search_area search_key">
+                    <form method="POST" action="map_area.php" class="search_container">
                         <input type="text" name="area" placeholder="地名を入力してください">
                         <input type="submit" name="submit" value="&#xf002">
-                    </form>
                 </div>
             </div>
             <div id="anime_list">
@@ -85,16 +85,6 @@
                 </div>
                 <p class="service_border"></p>
             </div>
-<<<<<<< HEAD
-            <div class="search_area">
-                <p>地域のキーワードを入力してください</p>
-                <form method="POST" action="map_area.php">
-                    <input type="text" name="area">
-                    <input type="submit" name="submit" value="送信">
-            </div>
-
-=======
->>>>>>> issue/79
         </section>
         <footer>
             <section class="foot_all">

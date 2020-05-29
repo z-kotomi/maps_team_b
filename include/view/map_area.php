@@ -33,7 +33,7 @@
 <?php       } ?>
         　　<div id="map_page_map_box"></div>
 <?php   if($spots !== []){ ?>
-            <h3 id="map_h3"><?php print $area . "聖地リスト" ;?></h3>
+            <h3 id="map_h3"><?php print entity_str($area) . "聖地リスト" ;?></h3>
             <div class="list_scroll"><table class="map_page_table">
                 <tr>
                     <th>No</th>
