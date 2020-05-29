@@ -13,7 +13,7 @@
                 </a>
                 <div class="header_menu">ユーザー：<?php print $user_name; ?></div>
                 <div class="header_menu header_spe"><a class="header_link" href="main.php">聖地一覧</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート探索</a></div>
                 <div class="header_menu header_spe" ><a class="header_link" href="logout.php">ログアウト</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
