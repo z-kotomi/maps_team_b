@@ -1,10 +1,10 @@
 html{
-    background-color:#f5f5dd;
+    
 }
 header {
     height: 90px;
     background-color: #C1EAFD;
-    margin-bottom:10px;
+    margin-bottom: 1px;
 }
 .header_box{
     margin: 0 auto;
@@ -36,6 +36,7 @@ footer{
 .content,.main_content{
     margin:0 auto;
     width: 960px;
+    background-color: #EEEEEE;
 }
 .footer_img{
     text-align:center
@@ -76,7 +77,7 @@ footer{
 }
 #map_page_map_box{
     width: 960px;
-    height: 480px;
+    height: 400px;
     margin-top:20px;
     margin-bottom:20px;
 }
@@ -91,6 +92,7 @@ footer{
     border:solid 1px black;
     float:right;
     overflow:auto;
+    background-color: white;
 }
 .main_map_addspot{
     text-align:center;
@@ -126,6 +128,10 @@ footer{
 }
 .like_table_content{
     margin-bottom:20px;
+    padding-top: 20px;
+}
+.like_table_content table{
+    background-color: white;
 }
 .like_page_circle{
     border:1px solid black;
@@ -141,39 +147,10 @@ footer{
 .like_sport_img{
     width:225px;
 }
-
 .search_key{
-    width: 300px;
-    background-color: #C1EAFD;
-    text-align:center;
-    margin:100px auto;
-    padding: 15px;
-}
-
-.search_keyword{
-  box-sizing: border-box;
-}
-.search_keyword input[type="text"]{
-  border: 1px solid #999;
-  padding: 3px 5px;
-  border-radius: 20px;
-  height: 2.0em;
-  width: 245px;
-  overflow: hidden;
-}
-.search_keyword input[type="text"]:focus {
-  outline: 0;
-}
-.search_keyword input[type="submit"]{
-  cursor: pointer;
-  font-family: FontAwesome;
-  font-size: 1.3em;
-  border: none;
-  background: none;
-  color: #3879D9;
-  outline : none;
-  display: inline-block;
-  vertical-align: middle;
+    width: 410px;
+    padding: 10px;
+    height: 34px;
 }
 #add_spot_content{
     width: 300px;
@@ -184,7 +161,8 @@ footer{
 }
 #detail_h2{
     text-align: center;
-    margin: 20px auto;
+    margin: 0px auto 20px auto;
+    padding-top: 20px;
     color: #777777;
 }
 #detail_page_map_box{
@@ -207,6 +185,7 @@ footer{
     border-radius: 20px;
     margin: 20px auto;
     padding: 6px;
+    width: 96%;
     color: #5989cf;
     background-color: #c6e4ff;
     clear: both;
@@ -230,7 +209,7 @@ footer{
 	color: #fff;
 }
 .return_div{
-    margin: 10px 0px 20px 0px;
+    padding: 10px 0px 20px 0px;
     text-align: center;
 }
 .add_view_address_text{
@@ -314,8 +293,10 @@ footer{
 .list_scroll{
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
-    width: 100%;
+    width: 96%;
     height: 700px;
+    background-color: white;
+    margin: 0px auto;
 }
 .map_page_table{
     border: 1px solid #777777;
@@ -333,6 +314,10 @@ footer{
 .map_page_location_id{
     text-align: center;
 }
+.map_page_anime_name{
+    width: 120px;
+    text-align: center;
+}
 .map_page_spot_name{
     width: 120px;
     text-align: center;
@@ -348,4 +333,108 @@ footer{
     height:40px;
     margin-left:100px;
 }
-
+.comment_list_scroll{
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    white-space: nowrap;
+}
+#comment_caption{
+    text-align: center;
+    color: #5989cf;
+}
+#search_list{
+    margin: 20px 0px;
+}
+#search_list ul,li{
+    display: inline;
+}
+#anime_list{
+    width: 95%;
+    margin: 40px auto 0px auto;
+}
+#serch{
+    display: flex;
+    width: 750px;
+    padding: 15px 100px;
+}
+.search_container{
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.search_container input[type="text"]{
+    border: 1px solid #999;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 40px;
+    height: 2.3em;
+    width: 230px;
+}
+.search_container input[type="text"]:focus {
+    outline: 0;
+}
+.search_container input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 1.3em;
+    border: none;
+    background: none;
+    color: #3879D9;
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    right: 64px;
+    top: -10px;
+    outline : none;
+}
+#service{
+    padding: 20px 0px 80px 0px;
+    margin-bottom: 1px;
+    width: 100%;
+}
+#service_title{
+    margin-top: 50px;
+    text-align: center;
+    color: #555555;
+    font-size: 4ex;
+}
+.service-box{
+    margin-left: 100px;
+}
+.service_content{
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.service_name{
+    border-left: 6px solid #C1EAFD;
+    padding-left: 4px;
+    width: 100%;
+    color: #888888;
+}
+.service_img{
+    width: 20%;
+}
+.service_detail{
+    margin: 0px 20px 0px 20px;
+    width: calc(80% - 44px);
+    flex: center;
+    text-align: center;
+    color: #888888;
+}
+.service_border{
+    border-bottom: 2px solid #999999;
+    margin: 10px 40px;
+}
+#add_h1{
+    margin: 0px;
+    padding: 20px;
+}
+#add_form{
+    padding-left: 20px;
+}
+.add_p{
+    margin: 0px;
+    padding: 12px 20px;
+}

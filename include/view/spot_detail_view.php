@@ -8,12 +8,12 @@
     <body>
         <header>
             <div class="header_box">
-                <a href="main.php">
+                <a href="search.php">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
                 <div class="header_menu">
                 <?php if($user_name ==''){ ?>
-                <a class="header_link" href="login.php">登録</a>
+                <a class="header_link" href="login.php">ログイン</a>
                 <?php } else{?>
                 <p class="header_user_name_text">ユーザー：<?php print $user_name;?></p>
                 <?php } ?>
@@ -22,7 +22,7 @@
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
                 <?php }?>
                 <div class="header_menu header_spe"><a class="header_link" href="main.php">聖地一覧</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート探索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
         </header>
@@ -66,35 +66,37 @@
             <label class="comment_label">
                 <span id="add_comment_btn" class="add_comment_title">口コミを投稿</span>
                 <input type="checkbox" name="checkbox" id=comment_checkbox>
+<?php       if($user_name !== ''){ ?>
                 <div id="popup">
                     <label for="comment_checkbox" class="icon-close">×</label>
                     <p>ユーザー名:<?php print h($user_name); ?>さん</p>
-                    <form method="post" action="spot_detail.php">
+                    <form method="post" action="spot_detail.php" name="cnvForm">
                         <label class="comment_form">
                             口コミ内容:<br>
-                            <textarea name="comment" rows="3" cols="30" wrap=”hard”></textarea>
+                            <textarea name="comment" rows="3" cols="30" wrap=”hard” onKeyUp="checkNum()" value=""></textarea>
                         </label><br>
                         <input type="hidden" name="spot_id" value="<?php print $spot_id;?>"/>
                         <input type=submit name="submit" value="投稿する">
                     </form>
                 </div>
+<?php       } ?>
             </label>
 <?php     if(count($comments)>0) { ?>
-            <table id="comment_table">
-                <caption>口コミ一覧</caption>
+            <p id="comment_caption">口コミ一覧</p>
+            <div class="comment_list_scroll"><table id="comment_table">
                 <tr>
                     <th>ユーザー名</th>
-                    <th>口コミ</th>
+                    <th><div class="comment_detail">口コミ</div></th>
                     <th>投稿日時</th>
                 </tr>
                 <?php foreach($comments as $comment) { ?>
                 <tr>
-                    <td><?php print h($comment['user_name']); ?></td>
-                    <td><?php print h($comment['comment']); ?></td>
-                    <td><?php print h($comment['created']); ?></td>
+                    <td><?php print entity_str($comment['user_name']); ?></td>
+                    <td><div class="comment_detail"><?php print entity_str($comment['comment']); ?></div></td>
+                    <td><?php print entity_str($comment['created']); ?></td>
                 </tr>
                 <?php } ?>
-            </table>
+            </table></div>
 <?php     } ?>
             <div class="return_div"><a  class="return_link" href="main.php">TOPへ戻る</a></div>
         </section>
@@ -129,13 +131,26 @@
             }
             function login_judge(){
                 if(user_name==''){
-                    if (confirm("登録して下さい！")){
+                    if (confirm("ログインして下さい！")){
                         window.location='login.php';
                     }else{
                         // document.getElementById('add_comment_btn').style.display="none";
                         window.location.reload();
                     }
                 }
+            }
+            //textareaに入力された文字をリアルタイムでエンティティ化
+            function checkNum(){
+            	var txt = document.cnvForm.comment.value;
+            	var result = "";
+            	for (i=0; i<txt.length; i++){
+                	if (txt.match(/[<>]/)===null){
+                		result =  txt;
+                	}else{
+                	    result = "";
+                    }
+                }
+            	document.cnvForm.comment.value = result;
             }
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&callback=initMap"></script>

@@ -8,6 +8,7 @@ $result_message = '';
 $result_list = [];
 $user_id='';
 $user_name = '';
+$animes = [];
 
 session_start();
 //今user登録状態判断
@@ -54,6 +55,12 @@ if(get_request_method() === 'POST'){
         close_db_connect($link);
     }
 }
-
+//DBハンドル取得
+$link = get_db_connect();
+$sql = "SELECT anime_id, anime_name
+        FROM anime_table
+        ";
+$animes = get_as_array($link,$sql);
+close_db_connect($link);
 
 include_once '../include/view/search.php';
