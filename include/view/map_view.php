@@ -14,7 +14,7 @@
                 </a>
                 <div class="header_menu">
                 <?php if($user_name ==''){ ?>
-                <a class="header_link" href="login.php">登録</a>
+                <a class="header_link" href="login.php">ログイン</a>
                 <?php } else{?>
                 <p class="header_user_name_text">ユーザー：<?php print $user_name;?></p>
                 <?php } ?>
@@ -23,7 +23,7 @@
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
                 <?php }?>
                 <div class="header_menu header_spe"><a class="header_link" href="main.php">聖地一覧</a></div>
-                <div class="header_menu header_spe"><a class="header_link" href="like.php">気になる</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート探索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
         </header>
@@ -34,7 +34,7 @@
         　　<div id="map_page_map_box"></div>
 <?php   if($spots !== []){ ?>
             <h3 id="map_h3"><?php print $spots[0]['anime_name'] . "聖地リスト" ;?></h3>
-            <div class="list_scroll">
+            <div class="list_scroll map_page_list">
                 <table class="map_page_table">
                     <?php foreach($spots as $spot){ ?>
                     <tr>

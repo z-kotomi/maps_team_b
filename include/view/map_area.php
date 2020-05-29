@@ -36,7 +36,6 @@
             <h3 id="map_h3"><?php print $area . "聖地リスト" ;?></h3>
             <div class="list_scroll">
                 <table class="map_page_table">
-
 <?php           foreach ($spots as $key){ foreach($key as $spot) {;?>
                 <tr>
                     <td>
