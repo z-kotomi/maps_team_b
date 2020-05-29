@@ -34,16 +34,17 @@
                         <input type="text" name="key_word" placeholder="アニメ名を入力してください">
                         <input type="submit" name="submit" value="&#xf002">
                     </form>
-                        <p><?php print entity_str($result_message); ?></p>
-                        <?php foreach($result_list as $result) { ?>
-                        <ol>
-                            <li>
-                            <a href="map.php?anime_id=<?php echo entity_str($result['anime_id']); ?>">
-                            <?php echo entity_str($result['anime_name']); ?>
-                            </a>
-                            </li>
-                        </ol>
-                        <?php } ?>
+                        <div id="search_list"><?php print entity_str($result_message); ?>
+                            <?php foreach($result_list as $result) { ?>
+                            <ul>
+                                <li>
+                                <a href="map.php?anime_id=<?php echo entity_str($result['anime_id']); ?>">
+                                <?php echo entity_str($result['anime_name']); ?>
+                                </a>
+                                </li>
+                            </ul>
+                            <?php } ?>
+                        </div>
                 </div>
                 <div class="search_area search_key">
                     <form method="POST" action="map_area.php" class="search_container">

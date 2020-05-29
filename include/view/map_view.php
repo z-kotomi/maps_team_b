@@ -34,7 +34,7 @@
         　　<div id="map_page_map_box"></div>
 <?php   if($spots !== []){ ?>
             <h3 id="map_h3"><?php print $spots[0]['anime_name'] . "聖地リスト" ;?></h3>
-            <div class="list_scroll">
+            <div class="list_scroll map_page_list">
                 <table class="map_page_table">
                     <?php foreach($spots as $spot){ ?>
                     <tr>

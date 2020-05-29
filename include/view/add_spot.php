@@ -21,9 +21,9 @@
         <section class="content">
             <!--ここに追加-->
             
-            <h1>+聖地追加</h1>
+            <h1 id="add_h1">+聖地追加</h1>
             
-            <form action="add_spot.php" method="post">
+            <form action="add_spot.php" method="post" id="add_form">
                 <p><span class="add_spot_key">位置情報</span></p>
                 <label>住所　<input class="add_view_address_text"type="text" name="address" value="<?php if (entity_str($address) !== '') { print entity_str($address); } else print entity_str($insert_address); ?>"></label><br>
                 <label>緯度　<input type="text" name="lat" value="<?php if (entity_str($lat) !== '') { print entity_str($lat); } else print entity_str($insert_lat); ?>"></label><br>
@@ -39,9 +39,9 @@
                 <input type="submit" name="submit" value="送信">
             </form>
             <?php foreach($errors as $error) { ?>
-            <p><?php print h($error); ?></p>
+            <p class="add_p"><?php print h($error); ?></p>
             <?php } ?>
-            <p><?php print h($message); ?></p>
+            <p class="add_p"><?php print h($message); ?></p>
         </section>
     </body>
     <footer>
