@@ -9,7 +9,7 @@
     <body>
         <header>
             <div class="header_box">
-                <a href="main.php">
+                <a href="search.php">
                     <img class="logo" src="../web_image/logo.png"></img>
                 </a>
                 <div class="header_menu">
@@ -39,40 +39,35 @@
                     <?php foreach($spots as $spot){ ?>
                     <tr>
                         <td>
-                            <input type="hidden" name="anime_id" value="<?php print $anime_id; ?>"/>
-                            <div style="float:right;margin-right:100px;margin-top:20px">
-                                <img style="width:50px;height:50px" class="list_like_icon" data-like_spot_id="<?php print entity_str($spot['spot_id']); ?>"  
-                                <?php if(in_array($spot['spot_id'],$u_l_data)){ ?>
-                                    data-like_status="<?php print 'true'?>" 
-                                    src="../web_image/like_icon_selected.png">
-                                <?php }else{ ?>
-                                    data-like_status="<?php print 'false'?>" 
-                                    src="../web_image/like_icon_noselected.png">
-                                <?php } ?>
-                                </img>
-                                <img class="map_page_map_btn" data-spotid="<?php print entity_str($spot['spot_id']); ?>" src="../web_image/map_page_map.png"></img>
-                            </div>
-                            <div style="margin-left:20px">
-                                <h2>#<?php print entity_str($spot['location_id']);?>&nbsp;&nbsp;<?php print entity_str($spot['spot_name']); ?></h2>
-                            </div>
-                            <h3 style="margin-left:50px"><strong><?php print entity_str($spot['spot_content']); ?></strong></h3>
-                            <div style="display:flex">
-                                <div style="margin-left:100px;margin-right:80px;text-align: center">
-                                    <p><strong>アニメ中の画面</strong></p>
-                                    <p>&nbsp;</p>
-                                    <img class="map_page_img" src="<?php print entity_str($spot['spot_image']); ?>"></img>
+                            <form method="post" action="map.php">
+                                <input type="hidden" name="anime_id" value="<?php print $anime_id; ?>"/>
+                                <div style="float:right;margin-right:100px;margin-top:20px">
+                                    <button type ="submit" name="like_spot_id" value="<?php print entity_str($spot['spot_id']); ?>" >マーカー登録</button>
+                                    <img class="map_page_map_btn" data-spotid="<?php print entity_str($spot['spot_id']); ?>" src="../web_image/map_page_map.png"></img>
                                 </div>
-                                <div style="text-align: center">
-                                    <p><strong>現地の画面</strong></p>
-                                    <p><?php print entity_str($spot['business_name']); ?></p>
-                                    <img class="map_page_img" src="<?php print entity_str($spot['business_image']); ?>"></img>
+                                <div style="margin-left:20px">
+                                    <h2>#<?php print entity_str($spot['location_id']);?>&nbsp;&nbsp;<?php print entity_str($spot['spot_name']); ?></h2>
                                 </div>
-                            </div>
-                            <div style="margin-left:20px">
-                                <p><strong>営業時間：</strong><?php print entity_str($spot['business_time']); ?></p>
-                                <p><strong>価格：</strong><?php print entity_str($spot['price']); ?></p>
-                                <p><strong>営業内容：</strong><?php print entity_str($spot['business_content']); ?></p>
-                            </div>
+                                <h3 style="margin-left:50px"><strong><?php print entity_str($spot['spot_content']); ?></strong></h3>
+                                <div style="display:flex">
+                                    <div style="margin-left:100px;margin-right:80px;text-align: center">
+                                        <p><strong>アニメ中の画面</strong></p>
+                                        <p>&nbsp;</p>
+                                        <img class="map_page_img" src="<?php print entity_str($spot['spot_image']); ?>"></img>
+                                    </div>
+                                    <div style="text-align: center">
+                                        <p><strong>現地の画面</strong></p>
+                                        <p><?php print entity_str($spot['business_name']); ?></p>
+                                        <img class="map_page_img" src="<?php print entity_str($spot['business_image']); ?>"></img>
+                                    </div>
+                                </div>
+                                <div style="margin-left:20px">
+                                    <p><strong>営業時間：</strong><?php print entity_str($spot['business_time']); ?></p>
+                                    <p><strong>価格：</strong><?php print entity_str($spot['price']); ?></p>
+                                    <p><strong>営業内容：</strong><?php print entity_str($spot['business_content']); ?></p>
+                                </div>
+                                
+                            </form>
                         </td>
                     </tr>
                     <?php } ?>
@@ -87,16 +82,9 @@
             var map_spot;
             var map;
             var markers = [];
-            var user_like_sport;
-            var user_id;
-            var like_sport_insert_result = false;
             function initMap(){
-                user_id = '<?php print $user_id;?>';
                 map_spot = JSON.parse('<?php echo $spots_json; ?>');
                 console.log(map_spot[0]);
-                user_like_sport = JSON.parse('<?php echo $user_like_spot_data_json; ?>');
-                console.log("user_like_",user_like_sport);
-                
                 var map_box = document.getElementById('map_page_map_box');
                 var mapCenter = {
                   lat: parseFloat(map_spot[0]['lat']),
@@ -118,7 +106,6 @@
                 }
                 markers_monitor();
                 list_map_monitor();
-                like_icon_monitor();
             }
               
             function addMaker(){
@@ -189,60 +176,6 @@
                     });
                 });
             }
-            function like_icon_monitor(){
-                var like_icons = Array.from(document.getElementsByClassName('list_like_icon'));
-                like_icons.forEach(function(like_icon){
-                    like_icon.addEventListener('click',function(){
-                        if(user_id == ''){
-                            alert('登録下さい');location.href='login.php';
-                        }else{
-                            if(like_icon.dataset.like_status =='true'){
-                                alert('お気に入りに追加済みです');
-                            }else if(like_icon.dataset.like_status =='false'){
-                                console.log('add_like')
-                                //like_sport DB select 
-                                $.ajax({
-                                    type:"get",
-                                    url:"like_sport_select.php",
-                                    data:{ 
-                                            user_id:user_id,
-                                            spot_id:like_icon.dataset.like_spot_id
-                                         },
-                                    success:function(select_result){
-                                        console.log("result",select_result);
-                                        if(select_result == true){
-                                            alert('お気に入りに追加済みです');
-                                        }else if(select_result == false){
-                                            like_sport_insert(like_icon.dataset.like_spot_id);
-                                            like_icon.src = '../web_image/like_icon_selected.png';
-                                        }
-                                    }
-                                
-                                });
-                            }
-                        }
-                    });
-                });
-            }
-            function like_sport_insert(spot_id){
-                $.ajax({
-                        type:"get",
-                        url:"like_sport_insert.php",
-                        data:{ 
-                                user_id:user_id,
-                                spot_id:spot_id
-                             },
-                        success:function(result){
-                            if(result == 'true'){
-                                alert('お気に入りに追加しました');
-                                like_sport_insert_result = true;
-                            }else{
-                                alert('お気に入り失敗'+result);
-                            }
-                        }
-                });
-            }
-            
         </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=<?php echo API_KEY; ?>&callback=initMap"></script>
         <footer>
