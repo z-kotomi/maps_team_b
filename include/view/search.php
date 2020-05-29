@@ -61,7 +61,7 @@
                 <div class="service-box">
                     <h2 class="service_name">聖地一覧</h2>
                     <div class="service_content">
-                        <img class="service_img" src="../upload_image/NOIMAGE.JPG"></img>
+                        <img class="service_img" src="../upload_image/listicon.png"></img>
                         <h2 class="service_detail">聖地スポットを一覧で表示し、それぞれのスポットの詳細を見ることができます。さらにスポット追加機能も搭載。</h3>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="service-box">
                     <h2 class="service_name">口コミ</h2>
                     <div class="service_content">
-                        <img class="service_img" src="../upload_image/NOIMAGE.JPG"></img>
+                        <img class="service_img" src="../upload_image/commenticon.png"></img>
                         <h2 class="service_detail">スポット詳細から口コミを登録することができます。<br>みんなで情報を共有しましょう</h3>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 <div class="service-box">
                     <h2 class="service_name">ルートマーカー</h2>
                     <div class="service_content">
-                        <img class="service_img" src="../upload_image/NOIMAGE.JPG"></img>
+                        <img class="service_img" src="../upload_image/routemarkericon.png"></img>
                         <h2 class="service_detail">好きな聖地スポットを複数登録すれば、そのルートを調べることができます。</h3>
                     </div>
                 </div>
