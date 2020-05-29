@@ -37,6 +37,7 @@
             <div class="list_scroll"><table class="map_page_table">
                 <tr>
                     <th>No</th>
+                    <th>アニメ名</th>
                     <th>場所</th>
                     <th>シーン</th>
                     <th>スポット画像</th>
@@ -53,6 +54,7 @@
                     <form method="post" action="map_area.php">
                         <input type="hidden" name="anime_id" value="<?php print entity_str($spot['anime_id']); ?>"/>
                         <td><div class="map_page_location_id"><?php print entity_str($spot['location_id']); ?></div></td>
+                        <td><div class="map_page_anime_name"><?php print entity_str($spot['anime_name']); ?></div></td>
                         <td><div class="map_page_spot_name"><?php print entity_str($spot['spot_name']); ?></div></td>
                         <td class="map_page_table_td"><div class="map_page_table_text"><?php print entity_str($spot['spot_content']); ?></div></td>
                         <td><img class="map_page_img" src="<?php print entity_str($spot['spot_image']); ?>" alt="spot_image"></td>
