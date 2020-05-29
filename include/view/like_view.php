@@ -27,7 +27,7 @@
                         <th class="like_table_th">操作</th>
                     </tr>
                     <?php if(count($like_data)==0){ ?>
-                    <p>まだ気になるスポット入っていないな！</p>
+                    <p>まだマーカー登録がされていないな！</p>
                     <?php }else{ $i=0;?>
                     <?php foreach($like_data as $value){ ?>
                     <tr class="like_table_tr">
