@@ -13,7 +13,7 @@
                 </a>
                 <div class="header_menu">
                 <?php if($user_name ==''){ ?>
-                <a class="header_link" href="login.php">登録</a>
+                <a class="header_link" href="login.php">ログイン</a>
                 <?php } else{?>
                 <p class="header_user_name_text">ユーザー：<?php print $user_name;?></p>
                 <?php } ?>
@@ -21,7 +21,7 @@
                 <?php if($user_name !== ''){ ?>
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
                 <?php }?>
-                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート検索</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート探索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="search.php">TOP</a></div>
             </div>
         </header>
@@ -43,11 +43,11 @@
             </div>
         </section>
         <div id="important" style="position:absolute;">
-            <div style="text-align:right;cursor:pointer;" id="closeA">閉める</div>
+            <div style="text-align:right;cursor:pointer;" id="closeA">閉じる</div>
             <img src="../web_image/important.png" border="0" width="100" height="100" />
         </div>
         <div id="questionnaire" style="position:absolute;">
-            <div style="text-align:right;cursor:pointer;" id="closeB">閉める</div>
+            <div style="text-align:right;cursor:pointer;" id="closeB">閉じる</div>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSff6vaW9x0bmzNCcnT49xZ4S8eFlOq4LID_qun_nHK65Tu0ng/viewform" target="_blank">
                 <img src="../web_image/questionnaire.jpg" border="0" width="150" height="100" />
             </a>

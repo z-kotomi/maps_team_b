@@ -14,7 +14,7 @@
                 </a>
                 <div class="header_menu">
                 <?php if($user_name ==''){ ?>
-                <a class="header_link" href="login.php">登録</a>
+                <a class="header_link" href="login.php">ログイン</a>
                 <?php } else{?>
                 <p class="header_user_name_text">ユーザー：<?php print $user_name;?></p>
                 <?php } ?>
@@ -22,7 +22,7 @@
                 <?php if($user_name !== ''){ ?>
                 <div class="header_menu header_spe"><a class="header_link" href="logout.php">ログアウト</a></div>
                 <?php }?>
-                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート検索</a></div>
+                <div class="header_menu header_spe"><a class="header_link" href="like.php">ルート探索</a></div>
                 <div class="header_menu header_spe"><a class="header_link" href="main.php">聖地一覧</a></div>
             </div>
         </header>
@@ -61,7 +61,7 @@
                 <div class="service-box">
                     <h2 class="service_name">聖地一覧</h2>
                     <div class="service_content">
-                        <img class="service_img" src="../upload_image/listicon.png"></img>
+                        <img class="service_img" src="../web_image/listicon.png"></img>
                         <h2 class="service_detail">聖地スポットを一覧で表示し、それぞれのスポットの詳細を見ることができます。さらにスポット追加機能も搭載。</h3>
                     </div>
                 </div>
@@ -69,15 +69,15 @@
                 <div class="service-box">
                     <h2 class="service_name">口コミ</h2>
                     <div class="service_content">
-                        <img class="service_img" src="../upload_image/commenticon.png"></img>
+                        <img class="service_img" src="../web_image/commenticon.png"></img>
                         <h2 class="service_detail">スポット詳細から口コミを登録することができます。<br>みんなで情報を共有しましょう</h3>
                     </div>
                 </div>
                 <p class="service_border"></p>
                 <div class="service-box">
-                    <h2 class="service_name">ルートマーカー</h2>
+                    <h2 class="service_name">ルート探索</h2>
                     <div class="service_content">
-                        <img class="service_img" src="../upload_image/routemarkericon.png"></img>
+                        <img class="service_img" src="../web_image/routemarkericon.png"></img>
                         <h2 class="service_detail">好きな聖地スポットを複数登録すれば、そのルートを調べることができます。</h3>
                     </div>
                 </div>
