@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>ルート検索</title>
+        <title>気になるページ</title>
         <link rel="stylesheet" href="../css/main_style.css" type="text/css" />
     </head>
     <body>
@@ -27,7 +27,7 @@
                         <th class="like_table_th">操作</th>
                     </tr>
                     <?php if(count($like_data)==0){ ?>
-                    <p>まだマーカー登録がされていないな！</p>
+                    <p>まだ気になるスポット入っていないな！</p>
                     <?php }else{ $i=0;?>
                     <?php foreach($like_data as $value){ ?>
                     <tr class="like_table_tr">
