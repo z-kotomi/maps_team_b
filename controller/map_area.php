@@ -10,7 +10,8 @@ $area = '';
 $spots = [];
 $add_like = '';
 $like_spot_id = '';
-
+$u_l_data=[];
+$user_like_spot_data=[];
 
 session_start();
 //今user登録状態判断
@@ -24,6 +25,13 @@ if (isset($_SESSION['user_id']) !== TRUE) {
         $_SESSION['login_error'] = ['user存在していない。'];
         header('Location:login.php');
         exit;
+    }else{
+        $sql = "SELECT spot_id FROM like_spot_table
+                WHERE user_id = {$user_id}";
+        $link = get_db_connect();
+        $user_like_spot_data = get_as_array($link,$sql);
+        //DB Close
+        close_db_connect($link);
     }
 }
 
@@ -83,7 +91,13 @@ if(count($errors) === 0){
 foreach($spots as $spot) {
 $spots_json = json_encode($spot, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_UNESCAPED_UNICODE);
 }
+
+foreach($user_like_spot_data as $value){
+    array_push($u_l_data,$value['spot_id']); 
+}
 //str内容変更
 $spots_json = str_replace('\n','',$spots_json); 
+$user_like_spot_data_json = json_encode($u_l_data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_UNESCAPED_UNICODE);
+$user_like_spot_data_json = str_replace('\n','',$user_like_spot_data_json); 
 
 include_once '../include/view/map_area.php';
