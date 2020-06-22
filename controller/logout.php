@@ -1,4 +1,6 @@
 <?php
+//ログアウトするとログイン画面に行く
+
 require_once '../include/const.php';
 require_once '../include/functions.php';
 
@@ -11,5 +13,5 @@ if(isset($_COOKIE[$session_name])){
 }
 
 session_destroy();
-header('Location:search.php');
+header('login.php');
 exit;
