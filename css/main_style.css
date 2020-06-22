@@ -1,25 +1,24 @@
 html{
-    background-color:#f5f5dd;
+    
 }
 header {
     height: 90px;
     background-color: #C1EAFD;
-    margin-bottom:10px;
+    margin-bottom: 1px;
 }
 .header_box{
     margin: 0 auto;
     width: 960px;
 }
-.header_nemu{
+.header_menu{
     display:inline;
     float:right;
-    margin:30px 20px;
+    margin:30px 5px;
 }
 .header_spe{
-    border-left:solid 1px black;
     border-right:solid 1px black;
-    padding-left:30px;
-    padding-right:30px;
+    padding-left:5px;
+    padding-right:10px;
 }
 .header_link{
     color:black;
@@ -34,9 +33,10 @@ footer{
     margin:0 auto;
     padding-bottom:15px;
 }
-.content{
+.content,.main_content{
     margin:0 auto;
     width: 960px;
+    background-color: #EEEEEE;
 }
 .footer_img{
     text-align:center
@@ -44,4 +44,397 @@ footer{
 .foot_link{
     color:black;
     text-decoration:none;
+}
+.login_content{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align:center;
+}
+.blue{
+    color:blue;
+}
+.red{
+    color:red;
+}
+.like_table{
+    border:solid 1px black;
+    border-collapse: collapse;
+    width:800px;
+    margin:0 auto;
+}
+.like_table_th,.like_table_td,.like_table_tr{
+    border:solid 1px black;
+    text-align:center;
+}
+#like_spot_map_box {
+    width: 960px;
+    height: 400px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+#map_page_map_box{
+    width: 960px;
+    height: 400px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+#main_map_box{
+    width: 600px;
+    height: 800px;
+    float:left;
+}
+.main_list_section{
+    width:340px;
+    height:800px;
+    border:solid 1px black;
+    float:right;
+    overflow:auto;
+    background-color: white;
+}
+.main_map_addspot{
+    text-align:center;
+}
+.main_content{
+    overflow: hidden;
+}
+.main_li_no_spot{
+    list-style-type:none
+}
+.marker_content_img{
+    width:200px;
+}
+.marker_content_img_div{
+    width:100%;
+    text-align:center;
+}
+#create_route{
+    background-color:#FF8A00;
+    margin:0 auto;
+    width: 260px;
+    height: 40px;
+    text-align:center;
+    padding:5px;
+    border:1px solid #FF8A00;
+    border-radius:20px;
+}
+#route_text_content{
+    display: none; 
+    width:100%;
+    margin:0 auto;
+    padding-top:20px;
+}
+.like_table_content{
+    margin-bottom:20px;
+    padding-top: 20px;
+}
+.like_table_content table{
+    background-color: white;
+}
+.like_page_circle{
+    border:1px solid black;
+    background-color:black;
+    width: 12px;
+    height:12px;
+    border-radius:9px;
+    margin-bottom:30px;
+}
+.like_space{
+    width:60px;
+}
+.like_sport_img{
+    width:225px;
+}
+.search_key{
+    width: 410px;
+    padding: 10px;
+    height: 34px;
+}
+#add_spot_content{
+    width: 300px;
+}
+.add_spot_key{
+    border-bottom:double 5px #C1EAFD;
+    height:20px;
+}
+#detail_h2{
+    text-align: center;
+    margin: 0px auto 20px auto;
+    padding-top: 20px;
+    color: #777777;
+}
+#detail_page_map_box{
+    width: 400px;
+    height: 400px;
+    margin: 0px 40px 40px 40px;
+    float: left;
+}
+.detail_img{
+    width: 400px;
+    float: left;
+}
+.detail_business_img{
+    width: 300px;
+    margin-left: 100px;
+}
+.detail_table, #comment_table{
+    border-bottom: solid 6px #aac5de;
+    border-top: solid 1px#aac5de;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 6px;
+    width: 96%;
+    color: #5989cf;
+    background-color: #c6e4ff;
+    clear: both;
+}
+.detail_table th{
+    width: 15%;
+    padding: 6px;
+}
+.return_link{
+    padding: 4px;
+    text-decoration: none;
+    background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, #aac5de 50%);
+	background-position: 0 0;
+	background-size: 200% auto;
+	transition: .3s;
+	color: #5989cf;
+	font-weight: bold;
+}
+.return_link:hover {
+	background-position: -100% 0;
+	color: #fff;
+}
+.return_div{
+    padding: 10px 0px 20px 0px;
+    text-align: center;
+}
+.add_view_address_text{
+    width:500px;
+}
+.user_name_text{
+    margin-top:0;
+    margin: 10px auto 20px auto;
+    width: 150px;
+    text-align: center;
+}
+
+/*popup表示させたいコンテンツのレイアウトと位置*/
+#popup{
+    border:solid 1px #777777;
+    border-radius:6px;
+    width:30%;
+    line-height:100px;
+    background-color:#ffffff;
+    padding:0 4%;
+    box-sizing:border-box;
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.comment_label{
+    display:block;
+    margin:30px auto 0 auto;
+    border-bottom: solid 5px #aac5de;
+    border-top: solid 1px#aac5de;
+}
+
+.comment_label, .add_comment_title{
+    display:block;
+    background-color:#C1EAFD;
+    color:#777777;
+    width:150px;
+    height:30px;
+    border-radius:6px;
+    text-align:center;
+    font-weight: bold;
+}
+
+.comment_label, .add_comment_title:hover{
+    cursor:pointer;
+}
+.comment_label input[type="checkbox"]{
+    display:none;
+}
+/*checkboxがcheckの状態になったらpopupを表示させる*/
+.comment_label input[type="checkbox"]:checked + #popup{
+    display:block;
+}
+
+.comment_form textarea {
+    height:85px;
+}
+
+.icon-close{
+    background: #777777;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+}
+
+.header_user_name_text{
+    margin-top:0;
+}
+
+#map_h3{
+    text-align: center;
+    margin: 50px auto 20px auto;
+    color: #777777;
+}
+.list_scroll{
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 96%;
+    height: 700px;
+    background-color: white;
+    margin: 0px auto;
+}
+.map_page_table{
+    border: 1px solid #777777;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.map_page_table th{
+    padding: 8px;
+    border: 1px solid #777777;
+    white-space: nowrap;
+}
+.map_page_table td{
+    border: 1px solid #777777;
+}
+.map_page_location_id{
+    text-align: center;
+}
+.map_page_anime_name{
+    width: 120px;
+    text-align: center;
+}
+.map_page_spot_name{
+    width: 120px;
+    text-align: center;
+}
+.map_page_img{
+    width: 300px;
+}
+.map_page_table_text{
+    width: 200px;
+}
+.map_page_map_btn{
+    width:40px;
+    height:40px;
+    margin-left:100px;
+}
+.comment_list_scroll{
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    white-space: nowrap;
+}
+#comment_caption{
+    text-align: center;
+    color: #5989cf;
+}
+#search_list{
+    margin: 20px 0px;
+}
+#search_list ul,li{
+    display: inline;
+}
+#anime_list{
+    width: 95%;
+    margin: 40px auto 0px auto;
+}
+#serch{
+    display: flex;
+    width: 750px;
+    padding: 15px 100px;
+}
+.search_container{
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.search_container input[type="text"]{
+    border: 1px solid #999;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 40px;
+    height: 2.3em;
+    width: 230px;
+}
+.search_container input[type="text"]:focus {
+    outline: 0;
+}
+.search_container input[type="submit"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 1.3em;
+    border: none;
+    background: none;
+    color: #3879D9;
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    right: 64px;
+    top: -10px;
+    outline : none;
+}
+#service{
+    padding: 20px 0px 80px 0px;
+    margin-bottom: 1px;
+    width: 100%;
+}
+#service_title{
+    margin-top: 50px;
+    text-align: center;
+    color: #555555;
+    font-size: 4ex;
+}
+.service-box{
+    margin-left: 100px;
+}
+.service_content{
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.service_name{
+    border-left: 6px solid #C1EAFD;
+    padding-left: 4px;
+    width: 100%;
+    color: #888888;
+}
+.service_img{
+    width: 20%;
+}
+.service_detail{
+    margin: 0px 20px 0px 20px;
+    width: calc(80% - 44px);
+    flex: center;
+    text-align: center;
+    color: #888888;
+}
+.service_border{
+    border-bottom: 2px solid #999999;
+    margin: 10px 40px;
+}
+#add_h1{
+    margin: 0px;
+    padding: 20px;
+}
+#add_form{
+    padding-left: 20px;
+}
+.add_p{
+    margin: 0px;
+    padding: 12px 20px;
 }

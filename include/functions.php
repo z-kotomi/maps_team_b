@@ -123,12 +123,13 @@ function get_request_method() {
 * @return str　不为空 POST値
 *               空     “”
 */
-function get_post_data($key) {
-   $str = '';
+function get_post_data($key, $default = '') {
+   
    if (isset($_POST[$key]) === TRUE) {
-       $str = $_POST[$key];
+       return $_POST[$key];
+       $str = trim($_POST[$key]);
    }
-   return $str;
+   return $default;
 }
 
 
@@ -278,4 +279,77 @@ function db_update($sql){
 function print_data($data){
     var_dump($data);
     exit;
+}
+
+/**
+ * DB inset & update 実行
+ * @param object $link
+ * @param String &sql
+ * @return boolean true||false
+ */
+function query_db($link,$sql){
+    return mysqli_query($link,$sql);
+}
+
+/**
+ * DB user_id チェック
+ * @param int  $user_id $_SESSION['user_id']
+ * return str $user_name
+ *        true  DB username
+ *        false  空str''
+*/
+function user_id_check($user_id){
+    //userid check
+    //DB link
+    $user_name = "";
+    $link = get_db_connect();
+    $sql = "SELECT user_name
+            FROM anime_user_table
+            WHERE user_id ={$user_id}";
+    $data = get_as_array($link,$sql);
+    if(isset($data[0]['user_name'])){
+        $user_name = $data[0]['user_name'];
+    }
+    //DB Close
+    close_db_connect($link);
+    return $user_name;
+}
+
+/**
+ * 同じユーザー名が既に登録されているがチェク
+ * @param str  $new_user_name
+ * @return  true || false
+**/
+function new_user_name_db_check($new_user_name){
+    //DB link
+    $data = [];
+    $link = get_db_connect();
+    $sql = "SELECT user_id FROM anime_user_table
+            WHERE user_name = '{$new_user_name}'";
+    $data = get_as_array($link,$sql);
+     //DB Close
+    close_db_connect($link);
+    if(isset($data[0]['user_id'])){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function h($str) {
+    return htmlspecialchars($str, ENT_QUOTES, HTML_CHARACTER_SET);
+}
+function redirect_to($url){
+    header('Location: '. $url);
+    exit;
+}
+function is_post(){
+    return $_SERVER['REQUEST_METHOD'] === 'POST';
+}
+
+function get_post_data_new($key, $default = ''){
+    if(isset($_POST[$key]) === true){
+        return $_POST[$key];
+    }
+    return $default;
 }
